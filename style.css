@@ -132,3 +132,13 @@ ul {
 .introBox{
   background-color:#b4d566;
 }
+.navBarItem{
+  background-color:transparent;
+  border:transparent;
+  color:white;
+  font-size:24px;
+  padding-top:5px;
+}
+span{
+  background-color: green;
+}
