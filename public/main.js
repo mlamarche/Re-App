@@ -1,6 +1,8 @@
  console.log("hello");
  $(function() {
      var current = "intro";
+     //$('.page').width = window.innerWidth - 300;
+     //console.log($('.pages').width);
 
      function pageChange(currentPage, toPage) {
          var $intro = $('.page.intro');
@@ -47,12 +49,11 @@
          } else if (toPage === "leaderboard") {
              $to = $leaderboard;
          }
-         console.log($from);
-         console.log($intro);
          $from.fadeOut();
          $to.show();
-         $from.off('click');
+         //$from.off('click');
      }
+
 
      $('button.toMain').click(function() {
          console.log("been clicked");
@@ -102,6 +103,13 @@
              pageChange(current, "leaderboard");
          }
          current = "leaderboard";
+     });
+     $('button.navBarItem.home').click(function() {
+         console.log("returning to the home page");
+         if (current != "main") {
+             pageChange(current, "main");
+         }
+         current = "main";
      });
      console.log(current);
  });

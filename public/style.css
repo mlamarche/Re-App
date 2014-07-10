@@ -1,9 +1,13 @@
 html{
-	height:100%;
+  height:100%;
 }
 body{
 	background-color:#66b1e2;
-	height:100%;
+  height:100%;
+}
+.everything {
+  /*margin-top: 51px;*/
+  height:100%;
 }
 #reset {
   background-color: hsl(216, 100%, 40%) !important;
@@ -29,13 +33,7 @@ body{
 	min-width:200px;
 	width:40%;
 	padding-bottom: 1%;
-	padding-top:5%;
-}
-.container{
-	/*background-color:#b4d566;*/
-	height:100%;
-	width : 50%;
-	min-width:250px;
+	padding-top:51px;
 }
 .text-center{
 	height:100%;
@@ -44,7 +42,6 @@ body{
 	height:100%;
 	width:100%;
 }
-
 /* sidebar */
 /* Hide for mobile, show later */
 .sidebar {
@@ -52,8 +49,9 @@ body{
 }
 @media (min-width: 768px) {
   .sidebar {
-    position: fixed;
-    top: 51px;
+    /*position: fixed;*/
+    padding-top:20px;
+    height:100%;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -65,7 +63,12 @@ body{
     border-right: 1px solid #eee;
   }
 }
-
+.butt {
+  padding-bottom: 10px;
+}
+.sidebar h4{
+  padding-top:51px;
+}
 /* Sidebar navigation */
 .nav-sidebar {
     margin-right: -21px; /* 20px padding + 1px border */
@@ -85,8 +88,6 @@ body{
     color:#66b1e2;
 }
 .nav-sidebar > .active{
-    padding-top:5px;
-    padding-bottom:15px;
     background-color:#66b1e2;
 }
 h4{
@@ -95,7 +96,12 @@ h4{
   font-size:48px;
   text-align:center;
 }
-
+.sidebar-items li {
+  padding-top: 15px;  
+}
+.sidebar-items li:last-child {
+  padding-bottom: 15px;
+}
 .menuItem{
 	width:100%;
 }
@@ -105,13 +111,17 @@ h4{
     width: 100%;
 	
 }
+.main{
+  height: 100%;
+    position: absolute;
+    width: 100%;
+}
 #full{
 	height: 100%;
   	position: absolute;
   	width: 100%;
     display:none;
 }
-
 ul {
   list-style: none;
   word-wrap: break-word;
@@ -120,7 +130,7 @@ ul {
   height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  /*width: 100%;*/
 }
 .center{
 	height:100%;
@@ -131,6 +141,8 @@ ul {
 }
 .introBox{
   background-color:#b4d566;
+  text-align: center;
+  top:51px;
 }
 .navBarItem{
   background-color:transparent;
@@ -139,6 +151,23 @@ ul {
   font-size:24px;
   padding-top:5px;
 }
-span{
-  background-color: green;
+#thisThing{
+  text-decoration: none;
+  color:white;
+}
+.navbar{
+  min-width:1000px;
+}
+.frodo{
+  height:100%;
+}
+.bod{
+  height:100%;
+  top:51;
+}
+.hat{
+  height:51px;
+}
+.Ralph{
+  height:100%;
 }

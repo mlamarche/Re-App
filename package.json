@@ -1,0 +1,28 @@
+{
+  "name": "ReApp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlamarche/Re-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlamarche/Re-App/issues"
+  },
+  "homepage": "https://github.com/mlamarche/Re-App",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.5.1",
+    "express-session": "^1.6.4",
+    "ferb": "0.0.2",
+    "parse": "^1.2.19",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3"
+  }
+}
