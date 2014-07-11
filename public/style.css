@@ -1,10 +1,15 @@
+@font-face {
+    font-family: ArcherBoldPro  ;
+    src: url(sansation_light.woff);
+}
+
+
 html{
   height:100%;
 }
 body{
 	background-color:#66b1e2;
   height:100%;
-  
 }
 .everything {
   /*margin-top: 51px;*/
@@ -42,6 +47,18 @@ body{
 #full{
 	height:100%;
 	width:100%;
+}
+#typeOne{
+font-family:"archer-bold-pro";
+}
+#typeTwo{
+  font-family: "/Fonts/Archer-Light-Pro.otf";
+}
+#typeThree{
+  font-family: "/Fonts/Archer-Medium-Pro.otf";
+}
+#typeFour{
+  font-family: "/Fonts/Sofia-Regular.otf";
 }
 /* sidebar */
 /* Hide for mobile, show later */
