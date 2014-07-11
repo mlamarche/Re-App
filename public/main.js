@@ -46,6 +46,8 @@
          }
          $from.fadeOut();
          $to.show();
+         $("." + currentPage + "z").css('background-color', "white");
+         $("." + toPage + "z").css('background-color', "#666666");
          //$from.off('click');
      }
 

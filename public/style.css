@@ -4,6 +4,7 @@ html{
 body{
 	background-color:#66b1e2;
   height:100%;
+  
 }
 .everything {
   /*margin-top: 51px;*/
@@ -49,7 +50,6 @@ body{
 }
 @media (min-width: 768px) {
   .sidebar {
-    /*position: fixed;*/
     padding-top:20px;
     height:100%;
     bottom: 0;
@@ -65,6 +65,11 @@ body{
 }
 .butt {
   padding-bottom: 10px;
+}
+#logo{
+  width:100%;
+    padding-top:51px;
+
 }
 .sidebar h4{
   padding-top:51px;
@@ -82,6 +87,18 @@ body{
     font-size: 30px;
     color:#66b1e2;
 }
+.sidebarBod{
+  position : fixed;
+  background-color: #b4d566;
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-left: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border:none;
+  font-size: 30px;
+  height:100%;
+  color:#66b1e2;
+}
 .nav-sidebar > .active > button {
     color: black;
     background-color: white;
@@ -95,9 +112,6 @@ h4{
   color:white;
   font-size:48px;
   text-align:center;
-}
-h3{
-  font-size: 30px;
 }
 .sidebar-items li {
   padding-top: 15px;  
@@ -128,6 +142,9 @@ h3{
 ul {
   list-style: none;
   word-wrap: break-word;
+}
+h3{
+  font-size: 30px;
 }
 .pages {
   height: 100%;
@@ -163,6 +180,7 @@ ul {
 }
 .frodo{
   height:100%;
+  width:;
 }
 .bod{
   height:100%;
