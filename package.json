@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mlamarche/Re-App",
   "dependencies": {
+    "async": "^0.9.0",
     "ejs": "^1.0.0",
     "express": "^4.5.1",
     "express-session": "^1.6.4",

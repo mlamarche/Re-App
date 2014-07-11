@@ -1,11 +1,10 @@
  console.log("hello");
  $(function() {
-     var current = "intro";
+     var current = "main";
      //$('.page').width = window.innerWidth - 300;
      //console.log($('.pages').width);
 
      function pageChange(currentPage, toPage) {
-         var $intro = $('.page.intro');
          var $main = $('.page.main');
          var $recycle = $('.page.recycle');
          var $reuse = $('.page.reuse');
@@ -15,9 +14,7 @@
          var $leaderboard = $('.page.leaderboard');
          var $from = "";
          var $to = "";
-         if (currentPage === "intro") {
-             $from = $intro;
-         } else if (currentPage === "main") {
+         if (currentPage === "main") {
              $from = $main;
          } else if (currentPage === "recycle") {
              $from = $recycle;
@@ -32,9 +29,7 @@
          } else if (currentPage === "leaderboard") {
              $from = $leaderboard;
          }
-         if (toPage === "intro") {
-             $to = $intro;
-         } else if (toPage === "main") {
+         if (toPage === "main") {
              $to = $main;
          } else if (toPage === "recycle") {
              $to = $recycle;
