@@ -2,6 +2,31 @@
 // do server stuff
 //
 
+
+
+var categories = [{},
+
+    {
+        name: "Glass",
+        subcategories: [
+            "Clear Bottle",
+            "Brown Bottle",
+            "Green Bottle",
+            "Container (sm)",
+
+
+        ]
+    },
+
+    {
+
+
+    }
+
+
+];
+
+
 var app = require("ferb")(),
     express = require("express"),
     async = require("async")
