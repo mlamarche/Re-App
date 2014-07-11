@@ -27,7 +27,7 @@ var catNames = [
 var nodeInfo = {
     categoryName: "",
     className: "",
-    children: allItems.splice(2).map(function(v, i) {
+    children: allItems.map(function(v, i) {
         return {
             className: i.toString(),
             categoryName: catNames[i],
