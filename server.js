@@ -2,6 +2,31 @@
 // do server stuff
 //
 
+
+
+var categories = [{},
+
+    {
+        name: "Glass",
+        subcategories: [
+            "Clear Bottle",
+            "Brown Bottle",
+            "Green Bottle",
+            "Container (sm)",
+
+
+        ]
+    },
+
+    {
+
+
+    }
+
+
+];
+
+
 var app = require("ferb")(),
     express = require("express"),
     async = require("async")
@@ -93,11 +118,11 @@ app.get("/authed", function(req, res) {
                         success: function(count) {
                             catArray.push(count);
                             console.log(catArray);
+                            callbacker(null, catArray);
                         }
 
                     })
                 }
-                callbacker(null, catArray);
 
             }
 
@@ -108,7 +133,6 @@ app.get("/authed", function(req, res) {
                 var thing = useScore;
                 callbacker(null, thing);
             }
-
 
 
             async.parallel([
@@ -130,36 +154,8 @@ app.get("/authed", function(req, res) {
                         }
                     })
                 },
-
                 function(callbacker) {
-                    countItem(1, callbacker);
-                },
-                function(callbacker) {
-                    countItem(2, callbacker);
-                },
-                function(callbacker) {
-                    countItem(3, callbacker);
-                },
-                function(callbacker) {
-                    countItem(4, callbacker);
-                },
-                function(callbacker) {
-                    countItem(5, callbacker);
-                },
-                function(callbacker) {
-                    countItem(6, callbacker);
-                },
-                function(callbacker) {
-                    countItem(7, callbacker);
-                },
-                function(callbacker) {
-                    countItem(8, callbacker);
-                },
-                function(callbacker) {
-                    countItem(9, callbacker);
-                },
-                function(callbacker) {
-                    countCat(callbacker);
+                    async.map([1, 2, 3, 4, 5, 6, 7, 8, 9], countItem, callbacker);
                 }
 
 
@@ -170,19 +166,10 @@ app.get("/authed", function(req, res) {
                     displayName: req.user.displayName,
                     givenName: req.user.name.givenName,
                     currentScore: users[0]._serverData.score,
-                    currentItems: arr[1],
                     currentUsers: arr[0],
-                    catOne: arr[2],
-                    catTwo: arr[3],
-                    catThree: arr[4],
-                    catFour: arr[5],
-                    catFive: arr[6],
-                    catSix: arr[7],
-                    catSeven: arr[8],
-                    catEight: arr[9],
-                    catNine: arr[10],
-                    catArray: arr[11],
-                    allItems: JSON.stringify(arr),
+                    currentItems: arr[1],
+                    catArray: arr[2],
+                    allItems: JSON.stringify(arr[2]),
 
                 });
             });
