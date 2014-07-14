@@ -501,7 +501,20 @@
 						<!-- Main jumbotron for a primary marketing message or call to action -->
 						<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
 							<h2>LeaderBoard</h2>
-							<p>Here I just want to display the leader boards</p>
+							<table class="table">
+							<thead>
+								<tr><th>Place</th><th>Name</th><th>Score</th></tr>
+							</thead>
+							<tbody>
+							<% leaderboard.forEach(function(r, i) { %>
+								<tr>
+									<td><%= i+1 %></td>
+									<td><%= r.name %></td>
+									<td><%= r.score %></td>
+								</tr>
+							<% }); %>
+							</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -513,6 +526,6 @@
 	</div>
 </div>
 		<script src="bubblechart.js" type="text/javascript"></script>
-
+		<script src="leaderboard.js" type="text/javascript"></script>
 		</body>
 	</html>

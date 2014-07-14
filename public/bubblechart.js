@@ -49,7 +49,6 @@ node.append("circle")
         return d.r;
     })
     .style("fill", function(d) {
-        console.log(d.className);
         return color(d.className);
     });
 

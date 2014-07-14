@@ -156,12 +156,35 @@ app.get("/authed", function(req, res) {
                 },
                 function(callbacker) {
                     async.map([1, 2, 3, 4, 5, 6, 7, 8, 9], countItem, callbacker);
+                },
+                function(callbacker) {
+                    var userScoreQuery = new Parse.Query(User);
+                    userScoreQuery.descending("score");
+                    userScoreQuery.limit(20);
+                    userScoreQuery.find({
+                        success: function(results) {
+                            callbacker(null, results);
+                        }
+
+                    })
                 }
 
 
 
             ], function(err, arr) {
                 console.log(arr);
+                var count = 0;
+                var leaderBoard = arr[3].map(function(r) {
+                    count++;
+                    return {
+                        name: r.get("firstName") + " " + r.get("lastName"),
+                        score: r.get("score"),
+                        index: count
+                    }
+                });
+
+                console.log(leaderBoard);
+
                 res.render("index", {
                     displayName: req.user.displayName,
                     givenName: req.user.name.givenName,
@@ -169,6 +192,7 @@ app.get("/authed", function(req, res) {
                     currentUsers: arr[0],
                     currentItems: arr[1],
                     catArray: arr[2],
+                    leaderboard: leaderBoard,
                     allItems: JSON.stringify(arr[2]),
 
                 });

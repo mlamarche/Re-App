@@ -1,4 +1,3 @@
- console.log("hello");
  $(function() {
      var current = "main";
      //$('.page').width = window.innerWidth - 300;
