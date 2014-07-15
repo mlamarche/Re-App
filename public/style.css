@@ -61,6 +61,9 @@ font-family:"archer-bold-pro";
 #typeFour{
   font-family: "/Fonts/Sofia-Regular.otf";
 }
+#bigScore{
+  font-size: 72px;
+}
 /* sidebar */
 /* Hide for mobile, show later */
 .sidebar {
@@ -84,11 +87,39 @@ font-family:"archer-bold-pro";
 .butt {
   padding-bottom: 10px;
 }
+.prof{
+  background-color: transparent;
+  border:none;
+}
 #logo{
   width:100%;
     padding-top:51px;
 
 }
+.whyMe{
+  margin-left:15px;
+  width:220px;
+  height:220px;
+}
+
+div.grayscale-logo {
+  height: 40px;
+  width: 40px;
+  background-image: url(/reapp-icon-grayscale.svg);
+  background-color: white;
+  background-size: contain;
+}
+
+.homesies.iconlink {
+  font-family: 'icomoon';
+  text-decoration:none;
+  color: #666666;
+}
+.homesies.iconlink:hover {
+  text-decoration:none;
+  color: #999999;
+}
+
 .sidebar h4{
   padding-top:51px;
 }
@@ -146,6 +177,10 @@ h4{
     width: 100%;
 	
 }
+.picHere{
+  height:220px;
+  width:220px;
+}
 .main{
   height: 100%;
     position: absolute;
@@ -188,9 +223,6 @@ h3{
   color:white;
   font-size:24px;
   padding-top:5px;
-}
-.coolPic{
-  background-color:red;
 }
 .proPic{
   margin-top:-5px;
@@ -236,6 +268,7 @@ h3{
 background-color:#666666;
 display:none;
 }
+
 .ih-item.square.effect3 {
   overflow: hidden;
 }
@@ -355,7 +388,6 @@ display:none;
 .ih-item.circle.effect13 .info p {
   visibility: hidden;
   color: #bbb;
-  padding: 10px 5px;
   font-style: italic;
   margin: 0 30px;
   font-size: 12px;
@@ -364,13 +396,13 @@ display:none;
   -moz-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
-.ih-item.circle.effect13 button:hover .info {
+.ih-item.circle.effect13 .prof:hover .info {
   opacity: 1;
 }
-.ih-item.circle.effect13 button:hover h3 {
+.ih-item.circle.effect13 .prof:hover h3 {
   visibility: visible;
 }
-.ih-item.circle.effect13 button:hover p {
+.ih-item.circle.effect13 .prof:hover p {
   visibility: visible;
 }
 
@@ -386,10 +418,10 @@ display:none;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ih-item button {
+.ih-item .prof {
   color: #333;
 }
-.ih-item button:hover {
+.ih-item .prof:hover {
   text-decoration: none;
 }
 .ih-item img {
@@ -455,14 +487,14 @@ display:none;
   -o-transform: translateX(100%);
   transform: translateX(100%);
 }
-.ih-item.circle.effect13.from_left_and_right button:hover h3 {
+.ih-item.circle.effect13.from_left_and_right .prof:hover h3 {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-.ih-item.circle.effect13.from_left_and_right button:hover p {
+.ih-item.circle.effect13.from_left_and_right .prof:hover p {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -484,14 +516,14 @@ display:none;
   -o-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-.ih-item.circle.effect13.top_to_bottom button:hover h3 {
+.ih-item.circle.effect13.top_to_bottom .prof:hover h3 {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-.ih-item.circle.effect13.top_to_bottom button:hover p {
+.ih-item.circle.effect13.top_to_bottom .prof:hover p {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -513,14 +545,14 @@ display:none;
   -o-transform: translateY(100%);
   transform: translateY(100%);
 }
-.ih-item.circle.effect13.bottom_to_top button:hover h3 {
+.ih-item.circle.effect13.bottom_to_top .prof:hover h3 {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-.ih-item.circle.effect13.bottom_to_top button:hover p {
+.ih-item.circle.effect13.bottom_to_top .prof:hover p {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);

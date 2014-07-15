@@ -106,7 +106,7 @@
      });
      var mahImg = $('<img />', {
          src: 'http://graph.facebook.com/' + persID + '/picture?type=large',
-         //class: "img-circle",
+         class: "img-circle",
          id: "coolPic"
      });
      mahImg.appendTo('.picHere');
