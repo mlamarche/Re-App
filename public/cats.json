@@ -1,0 +1,346 @@
+{
+    "Glass": {
+        "category": 0,
+        "image": "Re-App/Large_Icons/glass/glass.jpg",
+        "subcategories": {
+            "Clear Bottle": {
+                "image": "Re-App/Large_Icons/glass/bottle.jpg",
+                "value": 0
+            },
+            "Brown Bottle": {
+                "image": "Re-App/Large_Icons/glass/bottle.jpg",
+                "value": 1
+            },
+            "Green Bottle": {
+                "image": "Re-App/Large_Icons/glass/bottle.jpg",
+                "value": 2
+            },
+            "Small Container": {
+                "image": "Re-App/Large_Icons/glass/small-container.jpg",
+                "value": 3
+            },
+            "Medium Container": {
+                "image": "Re-App/Large_Icons/glass/medium-container.jpg",
+                "value": 4
+            },
+            "Large Container": {
+                "image": "Re-App/Large_Icons/glass/large-cont..jpg",
+                "value": 5
+            },
+            "Mixed Glass": {
+                "image": "Re-App/Large_Icons/glass/mixed-glass.jpg",
+                "value": 6
+            },
+            "Cup/Jar": {
+                "image": "Re-App/Large_Icons/glass/cup-and-jar.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Plastic": {
+        "category": 1,
+        "image": "Re-App/Large_Icons/Plastic/mixed-plastic.jpg",
+        "subcategories": {
+            "Bag": {
+                "image": "Re-App/Large_Icons/Plastic/bag.jpg",
+                "value": 0
+            },
+            "Bottle": {
+                "image": "Re-App/Large_Icons/Plastic/bottle.jpg",
+                "value": 1
+            },
+            "Container/Jug": {
+                "image": "Re-App/Large_Icons/Plastic/plastic-jug.jpg",
+                "value": 2
+            },
+            "Mixed Plastic": {
+                "image": "Re-App/Large_Icons/Plastic/mixed-plastic.jpg",
+                "value": 3
+            },
+            "Straw": {
+                "image": "Re-App/Large_Icons/Plastic/straws.jpg",
+                "value": 4
+            },
+            "Cig. box/Lighter": {
+                "image": "Re-App/Large_Icons/Plastic/cig-box.jpg",
+                "value": 5
+            },
+            "Cup": {
+                "image": "Re-App/Large_Icons/Plastic/cup.jpg",
+                "value": 6
+            },
+            "Food Wrapper": {
+                "image": "Re-App/Large_Icons/Plastic/food-wrapper.jpg",
+                "value": 7
+            },
+            "Toy": {
+                "image": "Re-App/Large_Icons/Plastic/toy.jpg",
+                "value": 8
+            },
+            "Personal Care": {
+                "image": "Re-App/Large_Icons/Plastic/personal-care.jpg",
+                "value": 9
+            },
+            "Six Pack Ring": {
+                "image": "Re-App/Large_Icons/Plastic/six-ring.jpg",
+                "value": 10
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 11
+            }
+        }
+    },
+    "Paper": {
+        "category": 2,
+        "image": "Re-App/Large_Icons/Paper/sheet.jpg",
+        "subcategories": {
+            "Cardboard": {
+                "image": "Re-App/Large_Icons/Paper/cardboard.jpg",
+                "value": 0
+            },
+            "Sheet": {
+                "image": "Re-App/Large_Icons/Paper/sheet.jpg",
+                "value": 1
+            },
+            "Newspaper": {
+                "image": "Re-App/Large_Icons/glass/newspaper.jpg",
+                "value": 2
+            },
+            "Magazine": {
+                "image": "Re-App/Large_Icons/glass/magazine.jpg",
+                "value": 3
+            },
+            "Bag": {
+                "image": "Re-App/Large_Icons/Paper/bag.jpg",
+                "value": 4
+            },
+            "Mixed Paper": {
+                "image": "Re-App/Large_Icons/Paper/mixed-paper.jpg",
+                "value": 5
+            },
+            "Container": {
+                "image": "Re-App/Large_Icons/Paper/container.jpg",
+                "value": 6
+            },
+            "Paperboard": {
+                "image": "Re-App/Large_Icons/Paper/paperboard.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Battery/Bulb": {
+        "category": 2,
+        "image": "Re-App/Large_Icons/Batteries/car-battery.jpg",
+        "subcategories": {
+            "AA, AAA, etc.": {
+                "image": "Re-App/Large_Icons/Batteries/aaa-battery.jpg",
+                "value": 0
+            },
+            "Rechargeable": {
+                "image": "Re-App/Large_Icons/Batteries/aaa-battery.jpg",
+                "value": 1
+            },
+            "Car Battery": {
+                "image": "Re-App/Large_Icons/Batteries/car-battery.jpg",
+                "value": 2
+            },
+            "Lithium Battery": {
+                "image": "Re-App/Large_Icons/Batteries/lithium.jpg",
+                "value": 3
+            },
+            "Light Bulb": {
+                "image": "Re-App/Large_Icons/Batteries/lightbulb.jpg",
+                "value": 4
+            },
+            "Fluorescent": {
+                "image": "Re-App/Large_Icons/Batteries/fluorescent.jpg",
+                "value": 5
+            },
+            "LED": {
+                "image": "Re-App/Large_Icons/Batteries/led.jpg",
+                "value": 6
+            },
+            "Christmas Lights": {
+                "image": "Re-App/Large_Icons/Batteries/christmas-lights.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Metal": {
+        "category": 3,
+        "image": "Re-App/Large_Icons/metal/mixed-metal.jpg",
+        "subcategories": {
+            "Steel Can": {
+                "image": "Re-App/Large_Icons/metal/steel-can.jpg",
+                "value": 0
+            },
+            "Tin Can": {
+                "image": "Re-App/Large_Icons/metal/steel-can.jpg",
+                "value": 1
+            },
+            "Aerosol Can": {
+                "image": "Re-App/Large_Icons/metal/aerosol-can.jpg",
+                "value": 2
+            },
+            "Container": {
+                "image": "Re-App/Large_Icons/metal/container.jpg",
+                "value": 3
+            },
+            "Cookware": {
+                "image": "Re-App/Large_Icons/metal/cookware.jpg",
+                "value": 4
+            },
+            "Accessory": {
+                "image": "Re-App/Large_Icons/metal/Accessory.jpg",
+                "value": 5
+            },
+            "Mixed Metal": {
+                "image": "Re-App/Large_Icons/metal/mixed-metal.jpg",
+                "value": 6
+            },
+            "Hardware": {
+                "image": "Re-App/Large_Icons/metal/hardware.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Cloth": {
+        "category": 4,
+        "image": "Re-App/Large_Icons/Cloth/fabric_pieces.jpg",
+        "subcategories": {
+            "Clothing": {
+                "image": "Re-App/Large_Icons/Cloth/clothing.jpg",
+                "value": 0
+            },
+            "Fabric Pieces": {
+                "image": "Re-App/Large_Icons/Cloth/fabric-pieces.jpg",
+                "value": 1
+            },
+            "Gloves": {
+                "image": "Re-App/Large_Icons/Cloth/gloves.jpg",
+                "value": 2
+            },
+            "Rope": {
+                "image": "Re-App/Large_Icons/Cloth/rope.jpg",
+                "value": 3
+            },
+            "Towels": {
+                "image": "Re-App/Large_Icons/Cloth/rag.jpg",
+                "value": 4
+            },
+            "Rags": {
+                "image": "Re-App/Large_Icons/Cloth/rag.jpg",
+                "value": 5
+            },
+            "Shoe": {
+                "image": "Re-App/Large_Icons/Cloth/shoes.jpg",
+                "value": 6
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 7
+            }
+        }
+    },
+    "Electronics": {
+        "category": 5,
+        "image": "Re-App/Large_Icons/electronics/computer.jpg",
+        "subcategories": {
+            "Cell Phone": {
+                "image": "Re-App/Large_Icons/electronics/cell-phone.jpg",
+                "value": 0
+            },
+            "Computer": {
+                "image": "Re-App/Large_Icons/electronics/computer.jpg",
+                "value": 1
+            },
+            "Handheld": {
+                "image": "Re-App/Large_Icons/electronics/handheld.jpg",
+                "value": 2
+            },
+            "Printer Cartridge": {
+                "image": "Re-App/Large_Icons/electronics/printer-cartridge.jpg",
+                "value": 3
+            },
+            "Printer": {
+                "image": "Re-App/Large_Icons/electronics/printer.jpg",
+                "value": 4
+            },
+            "Television": {
+                "image": "Re-App/Large_Icons/electronics/television.jpg",
+                "value": 5
+            },
+            "Appliance": {
+                "image": "Re-App/Large_Icons/electronics/appliance.jpg",
+                "value": 6
+            },
+            "Monitor": {
+                "image": "Re-App/Large_Icons/electronics/monitor.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Garage": {
+        "category": 6,
+        "image": "Re-App/Large_Icons/garage/tire.jpg",
+        "subcategories": {
+            "Yard Waste": {
+                "image": "Re-App/Large_Icons/garage/yard-waste.jpg",
+                "value": 0
+            },
+            "Tire": {
+                "image": "Re-App/Large_Icons/garage/tire.jpg",
+                "value": 1
+            },
+            "Pesticide": {
+                "image": "Re-App/Large_Icons/garage/pesticide.jpg",
+                "value": 2
+            },
+            "Paint/Solvent": {
+                "image": "Re-App/Large_Icons/garage/paint.jpg",
+                "value": 3
+            },
+            "Motor Oil": {
+                "image": "Re-App/Large_Icons/garage/motor-oil.jpg",
+                "value": 4
+            },
+            "Antifreeze": {
+                "image": "Re-App/Large_Icons/garage/antifreeze.jpg",
+                "value": 5
+            },
+            "Motor Fluid": {
+                "image": "Re-App/Large_Icons/garage/motor-oil.jpg",
+                "value": 6
+            },
+            "Car Filter": {
+                "image": "Re-App/Large_Icons/garage/car-filter.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "Re-App/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    }
+}
