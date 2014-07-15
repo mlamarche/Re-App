@@ -1,4 +1,5 @@
  $(function() {
+
      var current = "main";
      //$('.page').width = window.innerWidth - 300;
      //console.log($('.pages').width);
@@ -8,7 +9,6 @@
          var $recycle = $('.page.recycle');
          var $reuse = $('.page.reuse');
          var $friends = $('.page.friends');
-         var $bin = $('.page.bin');
          var $profile = $('.page.profile');
          var $leaderboard = $('.page.leaderboard');
          var $from = "";
@@ -21,8 +21,6 @@
              $from = $reuse;
          } else if (currentPage === "friends") {
              $from = $friends;
-         } else if (currentPage === "bin") {
-             $from = $bin;
          } else if (currentPage === "profile") {
              $from = $profile;
          } else if (currentPage === "leaderboard") {
@@ -36,15 +34,14 @@
              $to = $reuse;
          } else if (toPage === "friends") {
              $to = $friends;
-         } else if (toPage === "bin") {
-             $to = $bin;
          } else if (toPage === "profile") {
              $to = $profile;
          } else if (toPage === "leaderboard") {
              $to = $leaderboard;
          }
          $from.fadeOut();
-         $to.show();
+         $to.fadeIn();
+         $(".subPicSpace").fadeOut();
          $("." + currentPage + "z").css('background-color', "white");
          $("." + toPage + "z").css('background-color', "#666666");
          //$from.off('click');
@@ -79,13 +76,6 @@
          }
          current = "friends";
      });
-     $('button.menuItem.bin').click(function() {
-         console.log("bin has been clicked");
-         if (current != "bin") {
-             pageChange(current, "bin");
-         }
-         current = "bin";
-     });
      $('button.menuItem.profile').click(function() {
          console.log("profile has been clicked");
          if (current != "profile") {
@@ -108,4 +98,17 @@
          current = "main";
      });
      console.log(current);
+ });
+ $(document).ready(function() {
+     var img = $('<img />', {
+         src: 'http://graph.facebook.com/' + persID + '/picture?type=square',
+         class: "img-circle"
+     });
+     var mahImg = $('<img />', {
+         src: 'http://graph.facebook.com/' + persID + '/picture?type=large',
+         //class: "img-circle",
+         id: "coolPic"
+     });
+     mahImg.appendTo('.picHere');
+     img.appendTo('.proPic');
  });

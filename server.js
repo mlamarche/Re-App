@@ -8,7 +8,7 @@ var categories = [{},
 
     {
         name: "Glass",
-        subcategories: [
+        sucbategories: [
             "Clear Bottle",
             "Brown Bottle",
             "Green Bottle",
@@ -77,6 +77,36 @@ Parse.initialize("naN50758keB99xyf9lrf1r5LjyuIGiPVwDfu3Y6w", "E4OZ0O3gioOueyIlyj
 var Item = Parse.Object.extend("Item");
 var User = Parse.Object.extend("user");
 
+var groupUserItemsByCategory = function(userid, cb) {
+    var q = new Parse.Query(Item);
+    q.equalTo("user", parseInt(userid)).find({
+        success: function(items) {
+            var groups = {};
+            items.forEach(function(item) {
+                var category = item.get("category");
+                groups[category] = groups[category] || [];
+
+                groups[category].push({
+                    name: item.get("name"),
+                    category: category,
+                    subcategory: item.get("subCategory")
+                });
+            });
+            //console.log(groups + "Another really long sentence that I can see from outer space is....");
+            cb(null, groups);
+        }
+    });
+}
+
+groupUserItemsByCategory("3231649", function(err, items) {
+    for (var k in items) {
+        // console.log(k, "count:", items[k].length);
+        items[k].forEach(function(i) {
+            //console.log(i);
+        });
+    }
+})
+
 app.get("/", function(req, res) {
     res.sendfile("intro.html");
 });
@@ -93,6 +123,7 @@ app.get("/authed", function(req, res) {
     var userCount = new Parse.Query(User);
     var itemQuery = new Parse.Query(Item);
     var itemCount = new Parse.Query(Item);
+    var personalID = req.user.id;
 
     userQuery.equalTo("userID", parseInt(req.user.id)).find({
         success: function(users) {
@@ -104,7 +135,7 @@ app.get("/authed", function(req, res) {
                 var q = new Parse.Query(Item);
                 q.equalTo("category", item).count({
                     success: function(count) {
-                        console.log(count, " Kings", item);
+                        //console.log(count, " Kings", item);
                         callbacker(null, count);
                     }
                 })
@@ -117,7 +148,7 @@ app.get("/authed", function(req, res) {
                     all.equalTo("category", i).count({
                         success: function(count) {
                             catArray.push(count);
-                            console.log(catArray);
+                            //console.log(catArray);
                             callbacker(null, catArray);
                         }
 
@@ -128,11 +159,12 @@ app.get("/authed", function(req, res) {
 
             function sortScore(callbacker) {
                 var useScore = new Parse.Query(User);
-                console.log(useScore + "Conan O Brian");
+                //console.log(useScore + "Conan O Brian");
                 //useScore.equalTo("score").count
                 var thing = useScore;
                 callbacker(null, thing);
             }
+            // $img = new URL("https://graph.facebook.com/redbull/picture?width=140&height=110");
 
 
             async.parallel([
@@ -140,7 +172,7 @@ app.get("/authed", function(req, res) {
                 function(callbacker) {
                     userCount.count({
                         success: function(count) {
-                            console.log(count, " Frodos");
+                            //console.log(count, " Frodos");
                             callbacker(null, count);
                         }
                     })
@@ -149,7 +181,7 @@ app.get("/authed", function(req, res) {
                 function(callbacker) {
                     itemCount.count({
                         success: function(count) {
-                            console.log(count, " Rings");
+                            //console.log(count, " Rings");
                             callbacker(null, count);
                         }
                     })
@@ -167,12 +199,13 @@ app.get("/authed", function(req, res) {
                         }
 
                     })
+                },
+                function(callbacker) {
+                    groupUserItemsByCategory(personalID, callbacker);
                 }
 
-
-
             ], function(err, arr) {
-                console.log(arr);
+                //console.log(arr);
                 var count = 0;
                 var leaderBoard = arr[3].map(function(r) {
                     count++;
@@ -182,8 +215,8 @@ app.get("/authed", function(req, res) {
                         index: count
                     }
                 });
+                console.log(arr[4]);
 
-                console.log(leaderBoard);
 
                 res.render("index", {
                     displayName: req.user.displayName,
@@ -194,7 +227,9 @@ app.get("/authed", function(req, res) {
                     catArray: arr[2],
                     leaderboard: leaderBoard,
                     allItems: JSON.stringify(arr[2]),
-
+                    personalItems: arr[4],
+                    //theImage: $img,
+                    persID: personalID
                 });
             });
 
