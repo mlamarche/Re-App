@@ -1,0 +1,346 @@
+{
+    "Glass": {
+        "category": 0,
+        "image": "/Large_Icons/glass/mixed-glass.jpg",
+        "subcategories": {
+            "Clear Bottle": {
+                "image": "/Large_Icons/glass/bottle.jpg",
+                "value": 0
+            },
+            "Brown Bottle": {
+                "image": "/Large_Icons/glass/bottle.jpg",
+                "value": 1
+            },
+            "Green Bottle": {
+                "image": "/Large_Icons/glass/bottle.jpg",
+                "value": 2
+            },
+            "Small Container": {
+                "image": "/Large_Icons/glass/small-container.jpg",
+                "value": 3
+            },
+            "Medium Container": {
+                "image": "/Large_Icons/glass/medium-container.jpg",
+                "value": 4
+            },
+            "Large Container": {
+                "image": "/Large_Icons/glass/large-cont..jpg",
+                "value": 5
+            },
+            "Mixed Glass": {
+                "image": "/Large_Icons/glass/mixed-glass.jpg",
+                "value": 6
+            },
+            "Cup/Jar": {
+                "image": "/Large_Icons/glass/cup-and-jar.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Plastic": {
+        "category": 1,
+        "image": "/Large_Icons/Plastic/mixed-plastic.jpg",
+        "subcategories": {
+            "Bag": {
+                "image": "/Large_Icons/Plastic/bag.jpg",
+                "value": 0
+            },
+            "Bottle": {
+                "image": "/Large_Icons/Plastic/bottle.jpg",
+                "value": 1
+            },
+            "Container/Jug": {
+                "image": "/Large_Icons/Plastic/plastic-jug.jpg",
+                "value": 2
+            },
+            "Mixed Plastic": {
+                "image": "/Large_Icons/Plastic/mixed-plastic.jpg",
+                "value": 3
+            },
+            "Straw": {
+                "image": "/Large_Icons/Plastic/straws.jpg",
+                "value": 4
+            },
+            "Cig. box/Lighter": {
+                "image": "/Large_Icons/Plastic/cig-box.jpg",
+                "value": 5
+            },
+            "Cup": {
+                "image": "/Large_Icons/Plastic/cup.jpg",
+                "value": 6
+            },
+            "Food Wrapper": {
+                "image": "/Large_Icons/Plastic/food-wrapper.jpg",
+                "value": 7
+            },
+            "Toy": {
+                "image": "/Large_Icons/Plastic/toy.jpg",
+                "value": 8
+            },
+            "Personal Care": {
+                "image": "/Large_Icons/Plastic/personal-care.jpg",
+                "value": 9
+            },
+            "Six Pack Ring": {
+                "image": "/Large_Icons/Plastic/six-ring.jpg",
+                "value": 10
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 11
+            }
+        }
+    },
+    "Paper": {
+        "category": 2,
+        "image": "/Large_Icons/Paper/sheet.jpg",
+        "subcategories": {
+            "Cardboard": {
+                "image": "/Large_Icons/Paper/cardboard.jpg",
+                "value": 0
+            },
+            "Sheet": {
+                "image": "/Large_Icons/Paper/sheet.jpg",
+                "value": 1
+            },
+            "Newspaper": {
+                "image": "/Large_Icons/Paper/newspaper.jpg",
+                "value": 2
+            },
+            "Magazine": {
+                "image": "/Large_Icons/Paper/magazine.jpg",
+                "value": 3
+            },
+            "Bag": {
+                "image": "/Large_Icons/Paper/bag.jpg",
+                "value": 4
+            },
+            "Mixed Paper": {
+                "image": "/Large_Icons/Paper/mixed-paper.jpg",
+                "value": 5
+            },
+            "Container": {
+                "image": "/Large_Icons/Paper/container.jpg",
+                "value": 6
+            },
+            "Paperboard": {
+                "image": "/Large_Icons/Paper/paperboard.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Battery-Bulb": {
+        "category": 3,
+        "image": "/Large_Icons/Batteries/car-battery.jpg",
+        "subcategories": {
+            "AA, AAA, etc.": {
+                "image": "/Large_Icons/Batteries/aaa-battery.jpg",
+                "value": 0
+            },
+            "Rechargeable": {
+                "image": "/Large_Icons/Batteries/aaa-battery.jpg",
+                "value": 1
+            },
+            "Car Battery": {
+                "image": "/Large_Icons/Batteries/car-battery.jpg",
+                "value": 2
+            },
+            "Lithium Battery": {
+                "image": "/Large_Icons/Batteries/lithium.jpg",
+                "value": 3
+            },
+            "Light Bulb": {
+                "image": "/Large_Icons/Batteries/lightbulb.jpg",
+                "value": 4
+            },
+            "Fluorescent": {
+                "image": "/Large_Icons/Batteries/flourescent.jpg",
+                "value": 5
+            },
+            "LED": {
+                "image": "/Large_Icons/Batteries/led.jpg",
+                "value": 6
+            },
+            "Christmas Lights": {
+                "image": "/Large_Icons/Batteries/christmas-lights.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Metal": {
+        "category": 4,
+        "image": "/Large_Icons/metal/mixed-metal.jpg",
+        "subcategories": {
+            "Steel Can": {
+                "image": "/Large_Icons/metal/steel-can.jpg",
+                "value": 0
+            },
+            "Tin Can": {
+                "image": "/Large_Icons/metal/steel-can.jpg",
+                "value": 1
+            },
+            "Aerosol Can": {
+                "image": "/Large_Icons/metal/aerosol-can.jpg",
+                "value": 2
+            },
+            "Container": {
+                "image": "/Large_Icons/metal/container.jpg",
+                "value": 3
+            },
+            "Cookware": {
+                "image": "/Large_Icons/metal/cookware.jpg",
+                "value": 4
+            },
+            "Accessory": {
+                "image": "/Large_Icons/metal/Accessory.jpg",
+                "value": 5
+            },
+            "Mixed Metal": {
+                "image": "/Large_Icons/metal/mixed-metal.jpg",
+                "value": 6
+            },
+            "Hardware": {
+                "image": "/Large_Icons/metal/hardware.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Cloth": {
+        "category": 5,
+        "image": "/Large_Icons/Cloth/fabric-pieces.jpg",
+        "subcategories": {
+            "Clothing": {
+                "image": "/Large_Icons/Cloth/clothing.jpg",
+                "value": 0
+            },
+            "Fabric Pieces": {
+                "image": "/Large_Icons/Cloth/fabric-pieces.jpg",
+                "value": 1
+            },
+            "Gloves": {
+                "image": "/Large_Icons/Cloth/gloves.jpg",
+                "value": 2
+            },
+            "Rope": {
+                "image": "/Large_Icons/Cloth/rope.jpg",
+                "value": 3
+            },
+            "Towels": {
+                "image": "/Large_Icons/Cloth/rag.jpg",
+                "value": 4
+            },
+            "Rags": {
+                "image": "/Large_Icons/Cloth/rag.jpg",
+                "value": 5
+            },
+            "Shoe": {
+                "image": "/Large_Icons/Cloth/shoes.jpg",
+                "value": 6
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 7
+            }
+        }
+    },
+    "Electronics": {
+        "category": 6,
+        "image": "/Large_Icons/electronics/computer.jpg",
+        "subcategories": {
+            "Cell Phone": {
+                "image": "/Large_Icons/electronics/cell-phone.jpg",
+                "value": 0
+            },
+            "Computer": {
+                "image": "/Large_Icons/electronics/computer.jpg",
+                "value": 1
+            },
+            "Handheld": {
+                "image": "/Large_Icons/electronics/handheld.jpg",
+                "value": 2
+            },
+            "Printer Cartridge": {
+                "image": "/Large_Icons/electronics/printer-cartridge.jpg",
+                "value": 3
+            },
+            "Printer": {
+                "image": "/Large_Icons/electronics/printer.jpg",
+                "value": 4
+            },
+            "Television": {
+                "image": "/Large_Icons/electronics/television.jpg",
+                "value": 5
+            },
+            "Appliance": {
+                "image": "/Large_Icons/electronics/appliance.jpg",
+                "value": 6
+            },
+            "Monitor": {
+                "image": "/Large_Icons/electronics/monitor.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    },
+    "Garage": {
+        "category": 7,
+        "image": "/Large_Icons/garage/tire.jpg",
+        "subcategories": {
+            "Yard Waste": {
+                "image": "/Large_Icons/garage/yard-waste.jpg",
+                "value": 0
+            },
+            "Tire": {
+                "image": "/Large_Icons/garage/tire.jpg",
+                "value": 1
+            },
+            "Pesticide": {
+                "image": "/Large_Icons/garage/pesticide.jpg",
+                "value": 2
+            },
+            "Paint/Solvent": {
+                "image": "/Large_Icons/garage/paint.jpg",
+                "value": 3
+            },
+            "Motor Oil": {
+                "image": "/Large_Icons/garage/motor-oil.jpg",
+                "value": 4
+            },
+            "Antifreeze": {
+                "image": "/Large_Icons/garage/antifreeze.jpg",
+                "value": 5
+            },
+            "Motor Fluid": {
+                "image": "/Large_Icons/garage/motor-oil.jpg",
+                "value": 6
+            },
+            "Car Filter": {
+                "image": "/Large_Icons/garage/car-filter.jpg",
+                "value": 7
+            },
+            "Other": {
+                "image": "/Large_Icons/other.jpg",
+                "value": 8
+            }
+        }
+    }
+}

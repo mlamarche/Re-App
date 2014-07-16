@@ -18,6 +18,8 @@
 		<link rel="stylesheet" type = "text/css" href = "style.css">
 		<link rel="stylesheet" href="fonts.css" />
 		<script src="main.js" type="text/javascript"></script>
+		<script src="subpic-handlers.js" type="text/javascript"></script>
+
 	</head>
 	<body>
 		<div class="Ralph">
@@ -66,1215 +68,128 @@
 								</div>
 							</div>
 						</div>
+
+
+
+
+
+
+
 						<div class="page recycle" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
 									<h1>What Item Are You Recycling?</h1>
-									<div class="row picSpace">
-										<div class="col-sm-4 glassP">
-											
+									<% for (var rowIndex in allCatData) { %>
+										<div class="row picSpace">
+										<% for (var colIndex in allCatData[rowIndex]) { 
+											var colInfo = allCatData[rowIndex][colIndex]; %>
+											<div class="col-sm-4 <%= colInfo.categoryClass %>">
 											<div class="ih-item square effect3 bottom_to_top">
 												<button >
 													<div class="img">
-														<img src="Large_Icons/glass/mixed-glass.jpg" width="100%" height="100%" />
+														<img src="<%= colInfo.image %>" width="100%" height="100%" />
 													</div>
 													<div class="info">
-														<h3>Glass</h3>
+														<h3><%= colInfo.name %></h3>
 													</div>
 												</button>
+												</div>
 											</div>
-										</div>
-										<div class="col-sm-4 plasticP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Plastic/mixed-plastic.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Plastic</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4 paperP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Paper/sheet.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Paper</h3>
-													</div>
-												</button>
-											</div>
-										</div>
+										<%	} %>
 									</div>
-									<div class = "row subPicSpace subGlass">
-										<div class = "row sub GlassOne">
+										<% for (var colIndex in allCatData[rowIndex]) { 
+											var colInfo = allCatData[rowIndex][colIndex]; %>
+										<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
+										<div class = "row sub">
+										<% var i = 0;%>
+										<% for( var subCat in colInfo.subcategories){ %>
 											<div class="col-sm-3">
 												<div class="ih-item square effect3 bottom_to_top">
 													<button >
 														<div class="img">
-															<img src="Large_Icons/glass/bottle.jpg" width="100%" height="100%" />
+														<% console.log(colInfo,subCat); %>
+															<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="false" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
 														</div>
 														<div class="info">
-															<h3>Clear Bottle</h3>
+															<h3><%= subCat%></h3>
 														</div>
 													</button>
 												</div>
 											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/bottle.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Brown Bottle</h3>
-														</div>
-													</button>
-												</div>
+										<%if(i === 2 || i === 5){%>
 											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/bottle.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Green Bottle</h3>
-														</div>
-													</button>
-												</div>
-											</div>
+											<div class="row sub">
+										<% }%>
+
+										<%i++%>
+										<% }%>
 										</div>
-										<div class = "row sub GlassTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/small-container.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container (Sm.)</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/medium-container.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container (Med.)</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/large-cont..jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container (Lg.)</h3>
-														</div>
-													</button>
-												</div>
-											</div>
 										</div>
-										<div class = "row sub GlassThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/mixed-glass.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Mixed Glass</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/glass/cup-and-jar.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cup/Jar</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subPlastic">
-										<div class = "row sub PlasticOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/bag.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Bag</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/bottle.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Bottle</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/plastic-jug.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container/Jug</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub PlasticTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/mixed-plastic.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Mixed Plastic</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/straws.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Straw</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/cig-box.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cig. box/Lighter</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub PlasticThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/cup.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cup</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/food-wrapper.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Food Wrapper</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/toy.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Toy</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class="row sub PlasticFour">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/personal-care.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Personal Care</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Plastic/six-ring.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Six Pack Ring</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subPaper">
-										<div class = "row sub PaperOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/cardboard.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cardboard</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/sheet.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Sheet</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/newspaper.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Newspaper</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub PaperTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/magazine.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Magazine</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/bag.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Bag</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/mixed-paper.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Mixed Paper</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub PaperThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/container.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Paper/paperboard.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Paperboard</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row picSpace">
-										<div class ="col-sm-4 batteriesP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Batteries/car-battery.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Battery/Bulb</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4 metalP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/metal/mixed-metal.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Metal</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4 clothP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Cloth/fabric-pieces.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Cloth</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subBatteries">
-										<div class = "row sub BatteryOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/aaa-battery.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>AAA, AA, etc.</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/aaa-battery.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Rechargeable</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/car-battery.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Car Battery</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub BatteryTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/lithium.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Lithium</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/lightbulb.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Lightbulb</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/flourescent.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Flourescent</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub BatteryThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/led.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>LED</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Batteries/christmas-lights.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Christmas Lights</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subMetal">
-										<div class = "row sub MetalOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/steel-can.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Steel Can</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/tin-can.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Tin Can</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/aerosol-can.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Aerosol Can</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub MetalTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/container.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Container</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/cookware.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cookware</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/accessory.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Accessory</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub MetalThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/mixed-metal.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Mixed Metal</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/metal/hardware.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Hardware</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subCloth">
-										<div class = "row sub ClothOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/clothing.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Clothing</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/fabric-pieces.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Fabric Pieces</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/gloves.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Gloves</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub ClothTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/rope.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Rope</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/rag.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Towel</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/rag.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Rag</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class="row sub ClothThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Cloth/shoes.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Shoe</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/Other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row picSpace">
-										<div class ="col-sm-4 electronicsP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/electronics/computer.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Electronics</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4 garageP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/garage/tire.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Garage</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class = "col-sm-4 otherP">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Other</h3>
-													</div>
-												</button>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subElectronics">
-										<div class = "row sub ElectronicOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/cell-phone.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Cell Phone</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/computer.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Computer</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/handheld.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Handheld</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub ElectronicTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/printer-cartridge.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Printer Cartridge</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/printer.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Printer</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/television.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Television</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub ElectronicThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/appliance.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Appliance</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/electronics/monitor.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Monitor</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subGarage">
-										<div class = "row sub GarageOne">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/yard-waste.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Yard Waste</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/tire.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Tire</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/pesticide.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Pesticide</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub GarageTwo">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/paint.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Paint/Solvent</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/motor-oil.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Motor Oil</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/antifreeze.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Antifreeze</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class = "row sub GarageThree">
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/motor-oil.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Motor Fluid</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/garage/car-filter.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Car Filter</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<div class="ih-item square effect3 bottom_to_top">
-													<button >
-														<div class="img">
-															<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3>Other</h3>
-														</div>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class = "row subPicSpace subOther">
-										OTHER
-									</div>
+										<%	} %>
+									<% } %>
 								</div>
 							</div>
 						</div>
 
+
+
+
+
+
+
+
 						<div class="page reuse" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
-									<h2>Reuse</h2>
-									<p>This page lets users add to their reuse statistics</p>
-									<div class="row picSpace">
-										<div class="col-sm-4">
-											
+									<h1>What Item Are You Reusing?</h1>
+									<% for (var rowIndex in allCatData) { %>
+										<div class="row picSpace">
+										<% for (var colIndex in allCatData[rowIndex]) { 
+											var colInfo = allCatData[rowIndex][colIndex]; %>
+											<div class="col-sm-4 <%= colInfo.categoryClass %>">
 											<div class="ih-item square effect3 bottom_to_top">
 												<button >
 													<div class="img">
-														<img src="Large_Icons/glass/bottle.jpg" width="100%" height="100%" />
+														<img src="<%= colInfo.image %>" width="100%" height="100%" />
 													</div>
 													<div class="info">
-														<h3>Glass</h3>
-														<p>Description goes here</p>
+														<h3><%= colInfo.name %></h3>
 													</div>
 												</button>
+												</div>
 											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Plastic/mixed-plastic.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Plastic</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Paper/sheet.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Paper</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
-										</div>
+										<%	} %>
 									</div>
-									<div class="row picSpace">
-										<div class ="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Batteries/car-battery.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Battery/Bulb</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
+										<% for (var colIndex in allCatData[rowIndex]) { 
+											var colInfo = allCatData[rowIndex][colIndex]; %>
+										<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
+										<div class = "row sub">
+										<% var i = 0;%>
+										<% for( var subCat in colInfo.subcategories){ %>
+											<div class="col-sm-3">
+												<div class="ih-item square effect3 bottom_to_top">
+													<button >
+														<div class="img">
+														<% console.log(colInfo,subCat); %>
+															<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="true" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
+														</div>
+														<div class="info">
+															<h3><%= subCat%></h3>
+														</div>
+													</button>
+												</div>
 											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/metal/mixed-metal.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Metal</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
+										<%if(i === 2 || i === 5){%>
 											</div>
+											<div class="row sub">
+										<% }%>
+
+										<%i++%>
+										<% }%>
 										</div>
-										<div class="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/Cloth/fabric-pieces.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Cloth</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
 										</div>
-									</div>
-									<div class="row picSpace">
-										<div class ="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/electronics/computer.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Electronics</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/garage/tire.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Garage</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
-										</div>
-										<div class = "col-sm-4">
-											<div class="ih-item square effect3 bottom_to_top">
-												<button >
-													<div class="img">
-														<img src="Large_Icons/other.jpg" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3>Other</h3>
-														<p>Description goes here</p>
-													</div>
-												</button>
-											</div>
-										</div>
-									</div>
+										<%	} %>
+									<% } %>
 								</div>
 							</div>
 						</div>

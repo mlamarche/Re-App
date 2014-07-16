@@ -4,112 +4,112 @@ $(function() {
         console.log("Glass has been clicked OMG");
         if (current === "glass") {
             current = "";
-            $(".subPicSpace.subGlass").fadeOut();
+            $(".subPicSpace.subglassP").fadeOut();
         } else {
             subChange(current, "glass");
             current = "glass";
-            $(".subPicSpace.subGlass").fadeIn();
+            $(".subPicSpace.subglassP").fadeIn();
         }
     });
     $('.plasticP').click(function() {
         console.log("Plastic has been clicked OMG");
         if (current === "plastic") {
             current = "";
-            $(".subPicSpace.subPlastic").fadeOut();
+            $(".subPicSpace.subplasticP").fadeOut();
         } else {
             subChange(current, "plastic");
             current = "plastic";
-            $(".subPicSpace.subPlastic").fadeIn();
+            $(".subPicSpace.subplasticP").fadeIn();
         }
     });
     $('.paperP').click(function() {
         console.log("Paper has been clicked OMG");
         if (current === "paper") {
             current = "";
-            $(".subPicSpace.subPaper").fadeOut();
+            $(".subPicSpace.subpaperP").fadeOut();
         } else {
             subChange(current, "paper");
             current = "paper";
-            $(".subPicSpace.subPaper").fadeIn();
+            $(".subPicSpace.subpaperP").fadeIn();
         }
     });
     $('.metalP').click(function() {
         console.log("Metal has been clicked OMG");
         if (current === "metal") {
             current = "";
-            $(".subPicSpace.subMetal").fadeOut();
+            $(".subPicSpace.submetalP").fadeOut();
         } else {
             subChange(current, "metal");
             current = "metal";
-            $(".subPicSpace.subMetal").fadeIn();
+            $(".subPicSpace.submetalP").fadeIn();
         }
     });
-    $('.batteriesP').click(function() {
+    $('.battery-bulbP').click(function() {
         console.log("Batteries has been clicked OMG");
         if (current === "batteries") {
             current = "";
-            $(".subPicSpace.subBatteries").fadeOut();
+            $(".subPicSpace.subbattery-bulbP").fadeOut();
         } else {
             subChange(current, "batteries");
             current = "batteries";
-            $(".subPicSpace.subBatteries").fadeIn();
+            $(".subPicSpace.subbattery-bulbP").fadeIn();
         }
     });
     $('.clothP').click(function() {
         console.log("Cloth has been clicked OMG");
         if (current === "cloth") {
             current = "";
-            $(".subPicSpace.subCloth").fadeOut();
+            $(".subPicSpace.subclothP").fadeOut();
         } else {
             subChange(current, "cloth");
             current = "cloth";
-            $(".subPicSpace.subCloth").fadeIn();
+            $(".subPicSpace.subclothP").fadeIn();
         }
     });
     $('.electronicsP').click(function() {
         console.log("Electronics has been clicked OMG");
         if (current === "electronics") {
             current = "";
-            $(".subPicSpace.subElectronics").fadeOut();
+            $(".subPicSpace.subelectronicsP").fadeOut();
         } else {
             subChange(current, "electronics");
             current = "electronics";
-            $(".subPicSpace.subElectronics").fadeIn();
+            $(".subPicSpace.subelectronicsP").fadeIn();
         }
     });
     $('.garageP').click(function() {
         console.log("Garage has been clicked OMG");
         if (current === "garage") {
             current = "";
-            $(".subPicSpace.subGarage").fadeOut();
+            $(".subPicSpace.subgarageP").fadeOut();
         } else {
             subChange(current, "garage");
             current = "garage";
-            $(".subPicSpace.subGarage").fadeIn();
+            $(".subPicSpace.subgarageP").fadeIn();
         }
     });
     $('.otherP').click(function() {
         console.log("Other has been clicked OMG");
         if (current === "other") {
             current = "";
-            $(".subPicSpace.subOther").fadeOut();
+            $(".subPicSpace.subotherP").fadeOut();
         } else {
             subChange(current, "other");
             current = "other";
-            $(".subPicSpace.subOther").fadeIn();
+            $(".subPicSpace.subotherP").fadeIn();
         }
     });
 
     function subChange(currentPage, toPage) {
-        var $glass = $('.subPicSpace.subGlass');
-        var $plastic = $('.subPicSpace.subPlastic');
-        var $paper = $('.subPicSpace.subPaper');
-        var $metal = $('.subPicSpace.subMetal');
-        var $batteries = $('.subPicSpace.subBatteries');
-        var $cloth = $('.subPicSpace.subCloth');
-        var $electronics = $('.subPicSpace.subElectronics');
-        var $garage = $('.subPicSpace.subGarage');
-        var $other = $('.subPicSpace.subOther');
+        var $glass = $('.subPicSpace.subglassP');
+        var $plastic = $('.subPicSpace.subplasticP');
+        var $paper = $('.subPicSpace.subpaperP');
+        var $metal = $('.subPicSpace.submetalP');
+        var $batteries = $('.subPicSpace.subbattery-bulbP');
+        var $cloth = $('.subPicSpace.subclothP');
+        var $electronics = $('.subPicSpace.subelectronicsP');
+        var $garage = $('.subPicSpace.subgarageP');
+        var $other = $('.subPicSpace.subotherP');
         var $from = "";
         var $to = "";
         if (currentPage === "glass") {

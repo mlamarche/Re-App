@@ -4,28 +4,39 @@
 
 
 
-var categories = [{},
+var categories = require("./cats.json");
+var catData = require("./cat-data");
 
-    {
-        name: "Glass",
-        sucbategories: [
-            "Clear Bottle",
-            "Brown Bottle",
-            "Green Bottle",
-            "Container (sm)",
-
-
-        ]
-    },
-
-    {
-
-
+var subStuff = [];
+var mainStuff = [];
+for (var key in categories) {
+    for (var subKey in categories[key].subcategories) {
+        var passMe = {
+            image: categories[key].subcategories[subKey].image,
+            value: categories[key].subcategories[subKey].value,
+            categoryValue: categories[key].category,
+            categoryName: key,
+            subCategory: subKey
+        }
+        subStuff.push(passMe);
     }
 
-
-];
-
+}
+for (var key in categories) {
+    var passMe = {
+        image: categories[key].image,
+        category: categories[key].category,
+        categoryName: key
+    }
+    mainStuff.push(passMe);
+}
+for (i = 0; i < subStuff.length; i++) {
+    console.log(subStuff[0]);
+}
+console.log("main")
+for (i = 0; i < mainStuff.length; i++) {
+    console.log(mainStuff[i]);
+}
 
 var app = require("ferb")(),
     express = require("express"),
@@ -92,7 +103,6 @@ var groupUserItemsByCategory = function(userid, cb) {
                     subcategory: item.get("subCategory")
                 });
             });
-            //console.log(groups + "Another really long sentence that I can see from outer space is....");
             cb(null, groups);
         }
     });
@@ -112,9 +122,6 @@ app.get("/", function(req, res) {
 });
 
 app.get("/authed", function(req, res) {
-    //res.send(req.user.displayName + ", Welcome!");
-    //console.log(req.user)   14834280-Uday is facebook id and is userID on parse server
-    //res.sendfile("index.html");
 
     if (!req.user || !req.user.id)
         return res.redirect("/");
@@ -135,7 +142,6 @@ app.get("/authed", function(req, res) {
                 var q = new Parse.Query(Item);
                 q.equalTo("category", item).count({
                     success: function(count) {
-                        //console.log(count, " Kings", item);
                         callbacker(null, count);
                     }
                 })
@@ -148,7 +154,6 @@ app.get("/authed", function(req, res) {
                     all.equalTo("category", i).count({
                         success: function(count) {
                             catArray.push(count);
-                            //console.log(catArray);
                             callbacker(null, catArray);
                         }
 
@@ -159,12 +164,9 @@ app.get("/authed", function(req, res) {
 
             function sortScore(callbacker) {
                 var useScore = new Parse.Query(User);
-                //console.log(useScore + "Conan O Brian");
-                //useScore.equalTo("score").count
                 var thing = useScore;
                 callbacker(null, thing);
             }
-            // $img = new URL("https://graph.facebook.com/redbull/picture?width=140&height=110");
 
 
             async.parallel([
@@ -172,7 +174,6 @@ app.get("/authed", function(req, res) {
                 function(callbacker) {
                     userCount.count({
                         success: function(count) {
-                            //console.log(count, " Frodos");
                             callbacker(null, count);
                         }
                     })
@@ -181,7 +182,6 @@ app.get("/authed", function(req, res) {
                 function(callbacker) {
                     itemCount.count({
                         success: function(count) {
-                            //console.log(count, " Rings");
                             callbacker(null, count);
                         }
                     })
@@ -215,7 +215,8 @@ app.get("/authed", function(req, res) {
                         index: count
                     }
                 });
-                console.log(arr[4]);
+
+
 
 
                 res.render("index", {
@@ -228,7 +229,7 @@ app.get("/authed", function(req, res) {
                     leaderboard: leaderBoard,
                     allItems: JSON.stringify(arr[2]),
                     personalItems: arr[4],
-                    //theImage: $img,
+                    allCatData: catData.getSanitizedData(),
                     persID: personalID
                 });
             });
