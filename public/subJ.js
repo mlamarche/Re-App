@@ -1,103 +1,118 @@
 $(function() {
-    var current = "";
+    var currentSub = "";
     $('.glassP').click(function() {
         console.log("Glass has been clicked OMG");
-        if (current === "glass") {
-            current = "";
+        if (currentSub === "glass") {
+            currentSub = "";
             $(".subPicSpace.subglassP").fadeOut();
         } else {
-            subChange(current, "glass");
-            current = "glass";
+            subChange(currentSub, "glass");
+            currentSub = "glass";
             $(".subPicSpace.subglassP").fadeIn();
         }
     });
     $('.plasticP').click(function() {
         console.log("Plastic has been clicked OMG");
-        if (current === "plastic") {
-            current = "";
+        if (currentSub === "plastic") {
+            currentSub = "";
             $(".subPicSpace.subplasticP").fadeOut();
         } else {
-            subChange(current, "plastic");
-            current = "plastic";
+            subChange(currentSub, "plastic");
+            currentSub = "plastic";
             $(".subPicSpace.subplasticP").fadeIn();
         }
     });
     $('.paperP').click(function() {
         console.log("Paper has been clicked OMG");
-        if (current === "paper") {
-            current = "";
+        if (currentSub === "paper") {
+            currentSub = "";
             $(".subPicSpace.subpaperP").fadeOut();
         } else {
-            subChange(current, "paper");
-            current = "paper";
+            subChange(currentSub, "paper");
+            currentSub = "paper";
             $(".subPicSpace.subpaperP").fadeIn();
         }
     });
     $('.metalP').click(function() {
         console.log("Metal has been clicked OMG");
-        if (current === "metal") {
-            current = "";
+        if (currentSub === "metal") {
+            currentSub = "";
             $(".subPicSpace.submetalP").fadeOut();
         } else {
-            subChange(current, "metal");
-            current = "metal";
+            subChange(currentSub, "metal");
+            currentSub = "metal";
             $(".subPicSpace.submetalP").fadeIn();
         }
     });
     $('.battery-bulbP').click(function() {
         console.log("Batteries has been clicked OMG");
-        if (current === "batteries") {
-            current = "";
+        if (currentSub === "batteries") {
+            currentSub = "";
             $(".subPicSpace.subbattery-bulbP").fadeOut();
         } else {
-            subChange(current, "batteries");
-            current = "batteries";
+            subChange(currentSub, "batteries");
+            currentSub = "batteries";
             $(".subPicSpace.subbattery-bulbP").fadeIn();
         }
     });
     $('.clothP').click(function() {
         console.log("Cloth has been clicked OMG");
-        if (current === "cloth") {
-            current = "";
+        if (currentSub === "cloth") {
+            currentSub = "";
             $(".subPicSpace.subclothP").fadeOut();
         } else {
-            subChange(current, "cloth");
-            current = "cloth";
+            subChange(currentSub, "cloth");
+            currentSub = "cloth";
             $(".subPicSpace.subclothP").fadeIn();
         }
     });
     $('.electronicsP').click(function() {
         console.log("Electronics has been clicked OMG");
-        if (current === "electronics") {
-            current = "";
+        if (currentSub === "electronics") {
+            currentSub = "";
             $(".subPicSpace.subelectronicsP").fadeOut();
         } else {
-            subChange(current, "electronics");
-            current = "electronics";
+            subChange(currentSub, "electronics");
+            currentSub = "electronics";
             $(".subPicSpace.subelectronicsP").fadeIn();
         }
     });
     $('.garageP').click(function() {
         console.log("Garage has been clicked OMG");
-        if (current === "garage") {
-            current = "";
+        if (currentSub === "garage") {
+            currentSub = "";
             $(".subPicSpace.subgarageP").fadeOut();
         } else {
-            subChange(current, "garage");
-            current = "garage";
+            subChange(currentSub, "garage");
+            currentSub = "garage";
             $(".subPicSpace.subgarageP").fadeIn();
         }
     });
     $('.otherP').click(function() {
+        var dataReuseOther = $(this).find("img").attr("data-reuse");
+        var cats = $(this).find("img").attr("data-cat");
         console.log("Other has been clicked OMG");
-        if (current === "other") {
-            current = "";
-            $(".subPicSpace.subotherP").fadeOut();
-        } else {
-            subChange(current, "other");
-            current = "other";
-            $(".subPicSpace.subotherP").fadeIn();
-        }
+        $("#myModal").modal('show');
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#inputtext').focus();
+        });
+        $('#addbutton').on("click", function() {
+            text = $('#inputtext').val();
+            if (text != "") {
+                newOther(text, cats, dataReuseOther);
+            }
+            $('#inputtext').val('');
+        });
+        $('#inputtext').on("keydown", function(e) {
+            if (e.keyCode === 13) {
+                text = $('#inputtext').val();
+                if (text != "") {
+                    newOther(text, cats, dataReuseOther);
+                }
+                $('#inputtext').val('');
+                $('#myModal').modal('hide');
+            }
+        });
     });
 
     function subChange(currentPage, toPage) {
@@ -109,7 +124,6 @@ $(function() {
         var $cloth = $('.subPicSpace.subclothP');
         var $electronics = $('.subPicSpace.subelectronicsP');
         var $garage = $('.subPicSpace.subgarageP');
-        var $other = $('.subPicSpace.subotherP');
         var $from = "";
         var $to = "";
         if (currentPage === "glass") {
@@ -128,8 +142,6 @@ $(function() {
             $from = $electronics;
         } else if (currentPage === "garage") {
             $from = $garage;
-        } else if (currentPage === "other") {
-            $from = $other;
         }
         if (toPage === "glass") {
             $to = $glass;
@@ -147,13 +159,13 @@ $(function() {
             $to = $electronics;
         } else if (toPage === "garage") {
             $to = $garage;
-        } else if (toPage === "other") {
-            $to = $other;
         }
         if (currentPage != "") {
             $from.fadeOut();
         }
-        $to.fadeIn();
+        if (currentPage != "") {
+            $to.fadeIn();
+        }
         //$from.off('click');
     }
 

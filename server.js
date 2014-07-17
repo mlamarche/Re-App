@@ -7,6 +7,8 @@
 var categories = require("./cats.json");
 var catData = require("./cat-data");
 
+//var facts = require("./fact.json");
+
 var subStuff = [];
 var mainStuff = [];
 for (var key in categories) {
@@ -30,13 +32,18 @@ for (var key in categories) {
     }
     mainStuff.push(passMe);
 }
-for (i = 0; i < subStuff.length; i++) {
+var facts = [];
+//type here
+
+
+
+/*for (i = 0; i < subStuff.length; i++) {
     console.log(subStuff[0]);
 }
 console.log("main")
 for (i = 0; i < mainStuff.length; i++) {
     console.log(mainStuff[i]);
-}
+}*/
 
 var app = require("ferb")(),
     express = require("express"),
@@ -84,8 +91,10 @@ passport.use(new FacebookStrategy({
 ));
 
 Parse.initialize("naN50758keB99xyf9lrf1r5LjyuIGiPVwDfu3Y6w", "E4OZ0O3gioOueyIlyjD1MMFVq189RZD29AQazYc8");
+//Parse.initialize("KOxUo1qxlR9WAXDKG1NteEMdftJT4esM0LWScX1x", "TmTCBsWIsOUuNeML4NSLEJdcZ7sIqzd8VuNeeSkm");
 
 var Item = Parse.Object.extend("Item");
+//var Item = Parse.Object.extend("item");
 var User = Parse.Object.extend("user");
 
 var groupUserItemsByCategory = function(userid, cb) {
@@ -107,15 +116,6 @@ var groupUserItemsByCategory = function(userid, cb) {
         }
     });
 }
-
-groupUserItemsByCategory("3231649", function(err, items) {
-    for (var k in items) {
-        // console.log(k, "count:", items[k].length);
-        items[k].forEach(function(i) {
-            //console.log(i);
-        });
-    }
-})
 
 app.get("/", function(req, res) {
     res.sendfile("intro.html");
@@ -201,6 +201,7 @@ app.get("/authed", function(req, res) {
                     })
                 },
                 function(callbacker) {
+                    console.log(personalID + " Hello World");
                     groupUserItemsByCategory(personalID, callbacker);
                 }
 
@@ -217,8 +218,9 @@ app.get("/authed", function(req, res) {
                 });
 
 
-
-
+                console.log(users[0]._serverData.score + "Whats up")
+                console.log(arr[4])
+                console.log(users[0])
                 res.render("index", {
                     displayName: req.user.displayName,
                     givenName: req.user.name.givenName,
@@ -233,6 +235,15 @@ app.get("/authed", function(req, res) {
                     persID: personalID
                 });
             });
+
+            /*                 Parse.Cloud.run("updateScore",{userId : userId, score : 0}, {
+                    success: function(results) {
+                        response.success(results);
+                    },
+                    error: function(error) {
+                        response.error();
+                    }
+                });*/
 
 
 

@@ -37,7 +37,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
     },
@@ -91,7 +91,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 11
+                "value": 100
             }
         }
     },
@@ -133,7 +133,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
     },
@@ -175,7 +175,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
     },
@@ -217,7 +217,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
     },
@@ -255,7 +255,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 7
+                "value": 100
             }
         }
     },
@@ -297,7 +297,7 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
     },
@@ -339,8 +339,12 @@
             },
             "Other": {
                 "image": "/Large_Icons/other.jpg",
-                "value": 8
+                "value": 100
             }
         }
+    },
+    "Other": {
+        "category": 8,
+        "image": "/Large_Icons/other.jpg"
     }
 }
