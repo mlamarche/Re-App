@@ -59,9 +59,26 @@ body{
   font-size:60px;
 }
 .profileCategoryPic{
-  height:220px;
-  width:220px;
+  height:100px;
+  width:100px;
 }
+
+.profile-item-list {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.profile-item-list .cat-title {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.profile-item-list .cat-count {
+  font-size: 15px;
+  color: #eee;
+  font-style: italic;
+}
+
 #typeOne{
 font-family:"archer-bold-pro";
 }

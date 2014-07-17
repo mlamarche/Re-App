@@ -117,6 +117,28 @@ var groupUserItemsByCategory = function(userid, cb) {
     });
 }
 
+var buildPicturesMap = function() {
+    var r = [];
+    for (var k in categories) {
+        var index = parseInt(categories[k].category);
+        var subcats = {};
+        r[index] = {
+            image: categories[k].image,
+            subcategories: subcats
+        };
+
+        for (sk in categories[k].subcategories) {
+            subcats[parseInt(categories[k].subcategories[sk].value)] =
+                categories[k].subcategories[sk].image;
+        }
+    }
+
+
+    console.log("Picture Map -*-*-*-*-*-*-*-*-*-*-*-");
+    console.log(r);
+    return r;
+}
+
 app.get("/", function(req, res) {
     res.sendfile("intro.html");
 });
@@ -232,7 +254,8 @@ app.get("/authed", function(req, res) {
                     allItems: JSON.stringify(arr[2]),
                     personalItems: arr[4],
                     allCatData: catData.getSanitizedData(),
-                    persID: personalID
+                    persID: personalID,
+                    picMap: buildPicturesMap()
                 });
             });
 

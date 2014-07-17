@@ -218,50 +218,56 @@
 											<h6 id="bigBoy"><%=displayName%></h6>
 										</div>
 									</div>
-									<div class="row">
-									<%var nums = [0,0,0,0,0,0,0,0,0];
+									<%
+									var nums = [0,0,0,0,0,0,0,0,0];
 									var tempName = [];
 									var tempCat = [];
-									var bigCatNames = ["Glass Products", ["Plastics"],["Paper Products"],["Batteries/Bulbs"],["Metal Products"],["Cloth Products"],["Electronics"],["Garage Products"],["Other Items"]]%>
-									<% for (var k in personalItems) { %>
-										<% nums[k-1] = personalItems[k].length%>
-										<%personalItems[k].forEach(function(i) {%>
-										<%=k%>
-										<%tempName.push(i.name)
-										tempCat.push(k-1)%>
-										<%=i.name%>
-        									<%});%>
-										<% }%>
-											<h1>Recycle Bin</h1>
-											<%/*console.log(subNameArray)*/%>
-											<%for(i = 0; i < picArray.length; i++){%>
-											<p><img class="img-circle profileCategoryPic" src="<%= picArray[i]%>"><%=nums[i]%> <%=bigCatNames[i]%> 
-											<%for(s = 0;s < nums[i];s++){
-												var tempIndex = 0;
-												var tempArray = [];
-												console.log(nums[i]);
-												for(r = 0;r < subNameArray.length;r++){
-													//tempIndex =0;
-													for(t = 0;t < nums[i];t++){
-														if(tempName[t] === subNameArray[r]){
-															tempIndex = r;
-															tempArray.push(r);
-															console.log(tempName[t], " vs ", subNameArray[r], " at: ",r, " in: ",s)
-														}
+									var bigCatNames = ["Glass Products", "Plastics", "Paper Products","Batteries/Bulbs", "Metal Products", "Cloth Products", "Electronics", "Garage Products", "Other Items"]%>
+									<%
+									for(var i = 0 ; i < bigCatNames.length ; i ++) { 
+										var ndx = i + 1;
+										%>
+										<div class="row profile-item-list">
+											<div class="col-sm-1">
+												<img class="img-circle profileCategoryPic"
+													src="<%= picArray[i]%>">
+											</div>
+											<div class="col-sm-11">
+												<div class="cat-title"> <%=bigCatNames[i]%></div>
+												<%
+												var pi = personalItems[ndx.toString()] || [];
+												var rc = pi.length > 0 ? pi.length.toString() : "No";
+												%>
+												<div class="cat-count"><%= rc %> items recycled</div>
+
+												<% 
+												var subcats = {};
+												pi.forEach(function(item) {
+													subcats[item.subcategory] = subcats[item.subcategory] || 0;
+													subcats[item.subcategory]++;
+												});
+
+												console.log(subcats);
+
+												for (var k in subcats) {
+													var imgIndex = k.toString();
+													var count = subcats[k];
+													console.log(imgIndex, count);
+													console.log(picMap[i]);
+													console.log(picMap[i].subcategories[parseInt(imgIndex)]);
+													for (var j = 0 ; j < count ; j ++) {
+														var imgSrc = i === 8 ? picMap[i].image :
+															picMap[i].subcategories[imgIndex];
+
+												%>
+														<img class="img-circle subProfileCategoryPic"
+															src="<%= imgSrc %>">
+												<%
 													}
-													if(tempIndex === 0 || s === 8){
-														tempIndex = 8;
-														tempArray.push(tempIndex);
-													}
-												}
-												
-											//console.log(tempArray);
-											for(u = 0;u < tempArray.length;u++){%>
-												<img class="img-circle subProfileCategoryPic" src="<%=subPicArray[tempArray[u]]%>"/>
-											<% }}%>
-											</p>
-											<%}%>
-									</div>
+												} %>
+											</div>
+										</div>	
+									<%}%>
 								</div>
 							</div>
 						</div>
