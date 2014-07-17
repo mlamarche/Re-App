@@ -7,7 +7,7 @@
 var categories = require("./cats.json");
 var catData = require("./cat-data");
 
-//var facts = require("./fact.json");
+var facts = require("./fact.json");
 
 var subStuff = [];
 var mainStuff = [];
@@ -34,7 +34,13 @@ for (var key in categories) {
 }
 var facts = [];
 //type here
-
+for (var key in categories) {
+    var passMe = {
+        value: fact[key],
+        fact: fact[key],
+    }
+    facts.push(passMe);
+}
 
 
 /*for (i = 0; i < subStuff.length; i++) {
