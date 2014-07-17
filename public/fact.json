@@ -1,0 +1,340 @@
+{
+"factList":{
+
+	"factOne":{
+		"value": 0,
+		"fact": "The most effective way to reduce waste is to not create it in the first place.  Reduction and reusing are the best ways to save resources."
+			},
+	"factTwo": {
+		"value": 1,
+		"fact": "Reducing, reusing, and recycling limit the amount of waste that will need to be sent to landfills and incinerators."
+	},
+	"factThree": {
+		"value": 2,
+		"fact": "An easy way to reduce and reuse is to maintain and repair products such as clothing, tires, and appliances."
+	},
+	"factFour": {
+		"value": 3,
+		"fact": "Recycling helps create new, well-paying jobs in the recycling and manufacturing industries."
+	},
+	"factFive": {
+		"value": 4,
+		"fact": "Paper makes up nearly 30% of all waste that Americans throw away."
+	},
+
+	"factSix": {
+		"value": 5,
+		"fact": "In 2010, only 63% of the paper Americans used was recycled."
+	},
+
+	"factSeven": {
+		"value": 6,
+		"fact": "Batteries can contain heavy metals such as cadmium, lead, mercury, and nickel."
+	},
+
+	"factEight": {
+		"value": 7,
+		"fact": "Car batteries can be returned to almost any store that sells car batteries."
+	},
+	"factNine": {
+		"value": 8,
+		"fact": "In 2010, Americans generated 31 million tons of plastics…only 8% of which were recycled!"
+	},
+
+	"factTen": {
+		"value": 9,
+		"fact": "Glass containers, especially food and beverage containers, can be recycled and reused over and over again."
+	},
+
+"factEleven": {
+		"value": 10,
+		"fact": "Over 11.5 million tons of glass was introduced into the waste stream in 2010.  Only 27% was recovered for recycling."
+	},
+"factTwelve": {
+		"value": 11,
+		"fact": "The used oil from one oil change can contaminate one million gallons of fresh water.  Never dump used motor oil down the drain!"
+	},
+
+"factThirteen": {
+		"value": 12,
+		"fact": "It takes 42 gallons of crude oil to produce 2.5 quarts of new motor oil, but only one gallon of used oil to produce the same amount."
+	},
+
+	"factFourteen": {
+		"value": 13,
+		"fact": "Household products such as paints, cleaners, oils, pesticides, and batteries can contain corrosive, toxic, ignitable, or reactive ingredients."
+	},
+	"factFifteen": {
+		"value": 14,
+		"fact": "Tire piles can harbor disease-carrying pests and rodents.  They can also catch on fire."
+	},
+	"factSixteen": {
+		"value": 15,
+		"fact": "Recycling one million laptops saves the energy equivalent to the amount of electricity used by more than 3,500 U.S. homes in a single year."
+	},
+	"factSeventeen": {
+		"value": 16,
+		"fact": "For every million cell phones recycled, 35,000 pounds of copper can be recovered."
+	},
+	"factEighteen": {
+		"value": 17,
+		"fact": "For every million cell phones recycled, 772 pounds of silver can be recovered."
+	},
+	"factNineteen": {
+		"value": 18,
+		"fact": "For every million cell phones recycled, 75 pounds of gold can be recovered."
+	},
+	"factTwenty": {
+		"value": 19,
+		"fact": "A used aluminum can is recycled and back on grocery shelves as a new can in as little as 60 days."
+	},
+	"factTwentyone": {
+		"value": 20,
+		"fact": "Recycling one aluminum can saves enough energy to run a television for three hours."
+	},
+	"factTwentytwo": {
+		"value": 21,
+		"fact": "More aluminum goes into beverage cans than any other product."
+	},
+	"factTwentythree": {
+		"value": 22,
+		"fact": "Aluminum cans can take 500 years to decompose!"
+	},
+	"factTwentyfour": {
+		"value": 23,
+		"fact": "There is no limit to the amount of times aluminum can be recycled."
+	},
+	"factTwentyfive": {
+		"value": 24,
+		"fact": "If all of our newspaper was recycled, we could save about 250 million trees per year."
+	},
+	"factTwentysix": {
+		"value": 25,
+		"fact": "The average American uses 7 trees per year in paper, wood, and other products."
+	},
+
+	"factTwentyseven": {
+		"value": 26,
+		"fact": "It takes 17 trees to absorb 250 pounds of carbon dioxide from the air each year."
+	},
+	"factTwentyeight": {
+		"value": 27,
+		"fact": "Americans use 2.5 million plastic bottles every year!"
+	},
+	"factTwentynine": {
+		"value": 28,
+		"fact": "Plastic bags and other plastics in the ocean can kill as many as one million sea creatures every year."
+	},
+	"factThirty": {
+		"value": 29,
+		"fact": "A modern glass bottle would take 4,000 or more years to decompose."
+	},
+	"factThirtyone": {
+		"value": 30,
+		"fact": "Each American throws out about 1,200 pounds of organic garbage that can composted."
+	},
+	"factThirtytwo": {
+		"value": 31,
+		"fact": "The U.S. population discards 16 billion diapers each year."
+	},
+	"factThirtythree": {
+		"value": 32,
+		"fact": "The U.S. population discards 1.6 billion pens each year."
+	},
+	"factThirtyfour": {
+		"value": 33,
+		"fact": "The U.S. population discards enough aluminum each year to rebuild the US commercial air fleet four times over."
+	},
+
+	"factThirtyfive": {
+		"value": 34,
+		"fact": "Overall, Americans recovered 34% of waste generated in 2009. That means we threw away 161 million tons of material, which amounts to about three pounds of garbage per person per day."
+	},
+	"factThirtysix": {
+		"value": 35,
+		"fact": "There were about 9,000 curbside recycling programs in the United States in 2009."
+	},
+	"factThirtyseven": {
+		"value": 36,
+		"fact": "In 2009, Americans recycled 82 million tons of materials. The resulting CO2 emission reduction is equivalent to taking 33 million passenger vehicles off the road."
+	},
+	"factThirtyeight": {
+		"value": 37,
+		"fact": "The recyclable materials in the U.S. waste stream would generate over $7 billion if they were recycled. That’s equivalent to Donald Trump’s net worth."
+	},
+	"factThirtynine": {
+		"value": 38,
+		"fact": "The recycling industry employed over 1.1 million workers and generated over $236 billion in annual revenue in 2001. Increasing recycling rates and new collection programs show that the industry is growing."
+	},
+	"factForty": {
+		"value": 39,
+		"fact": "In 2009, 3.4 million tons of aluminum were generated in the U.S. and .69 million tons were recovered."
+	},
+	"factFortyone": {
+		"value": 40,
+		"fact": "In the United States, over 100,000 aluminum cans are recycled each minute. That amounts to 53 billion cans recycled in 2010. However, over $1.1 billion in aluminum cans were wasted in 2010."
+	},
+	"factFortytwo": {
+		"value": 41,
+		"fact": "The aluminum cans recycled in 2010, stacked one on top of the other, would be 1,454 times taller than the Empire State Building."
+	},
+	"factFortythree": {
+		"value": 42,
+		"fact": "If you laid all the aluminum cans recycled in 2010 end to end, they could circle the earth 169 times!"
+	},
+	"factFortyfour": {
+		"value": 43,
+		"fact": "The U.S. recycling rate for aluminum beverage cans reached 58.1% in 2010- a rate that is more than double that of any other beverage container."
+	},
+	"factFortyfive": {
+		"value": 44,
+		"fact": "Aluminum cans have 68% recycled content."
+	},
+	"factFortysix": {
+		"value": 45,
+		"fact": "Used aluminum cans are recycled and back on the shelf as new cans in as few as 60 days."
+	},
+	"factFortyseven": {
+		"value": 46,
+		"fact": "Twenty recycled cans can be made with the energy needed to produce one can using virgin ore. "
+	},
+	"factFortyeight": {
+		"value": 47,
+		"fact": "Recycling one aluminum can saves enough energy to run your television for three hours. "
+	},
+	"factFortynine": {
+		"value": 48,
+		"fact": "The amount of energy saved just from recycling cans in 2010 is equal to the energy equivalent of 17 million barrels of crude oil, or nearly two days of all U.S. oil imports."
+	},
+	"factFifty": {
+		"value": 49,
+		"fact": "The pollutants created in producing one ton of aluminum include 3,290 pounds of red mud, 2,900 pounds of carbon dioxide (a greenhouse gas), 81 pounds of air pollutants and 789 pounds of solid wastes."
+	},
+	"factFiftyone": {
+		"value": 50,
+		"fact": "Tossing away an aluminum can wastes as much energy as pouring out half of that can’s volume of gasoline."
+	},
+	"factFiftytwo": {
+		"value": 51,
+		"fact": "In 2009, 25% of all electronics at the end of their useful “lives” were collected for recycling. "
+	},
+	"factFiftythree": {
+		"value": 52,
+		"fact": "Approximately 38% (by weight) of all computers ready for “end-of-life management” in 2009 were collected for recycling."
+	},
+	"factFiftyfour": {
+		"value": 53,
+		"fact": "Only 17% (by weight) of all televisions at their “end-of-life” were recovered for recycling in 2009."
+	},
+	"factFiftyfive": {
+		"value": 54,
+		"fact": "Only 8% (by weight) of all mobile phones no longer in use in 2009 were collected for recycling."
+	},
+	"factFiftysix": {
+		"value": 55,
+		"fact": "The average consumer replaces their mobile phone every 20.5 months."
+	},
+	"factFiftyseven": {
+		"value": 56,
+		"fact": "In 2009, 12 million tons of glass were generated in the United States, and 3 million tons were recovered."
+	},
+	"factFiftyeight": {
+		"value": 57,
+		"fact": "In 2009, Americans threw away almost 9 million tons of glass. That amount could fill enough tractor trailers to stretch from New York to Los Angeles and back!"
+	},
+	"factFiftynine": {
+		"value": 58,
+		"fact": "In 2010, Americans recovered 63.5% of U.S. paper— an 89% increase in recovery since 1990. However, we threw away $2.8 billion worth of paper!"
+	},
+	"factSixty": {
+		"value": 59,
+		"fact": "In 2010, Americans trashed enough paper to cover 26,700 football fields or 17,800 soccer fields in paper three feet deep."
+	},
+	"factSixtyone": {
+		"value": 60,
+		"fact": "31% of the paper and paperboard recovered in the U.S. in 2010 went to produce containerboard (i.e. corrugated boxes) and 12% went to produce boxboard (i.e. cereal boxes)."
+	},
+	"factSixtytwo": {
+		"value": 61,
+		"fact": "As of 2010, 80 percent of U.S. paper mills (115 mills) relied on recycled paper. In fact, it supplied 37 percent of their material."
+	},
+	"factSixtythree": {
+		"value": 62,
+		"fact": "It takes 24 trees to make one ton of uncoated virgin (non-recycled) printing and office paper."
+	},
+	"factSixtyfour": {
+		"value": 63,
+		"fact": "Using recycled scrap paper instead of virgin material saves 7,000 gallons of water per ton of paper produced."
+	},
+	"factSixtyfive": {
+		"value": 64,
+		"fact": "Recycled paper production creates 74 percent less air pollution and 35 percent less water pollution than virgin paper production."
+	},
+	"factSixtysix": {
+		"value": 65,
+		"fact": "In 2009, almost 30 million tons of plastics were generated in the United States, and only around 2 million tons were recovered."
+	},
+	"factSixtyseven": {
+		"value": 66,
+		"fact": "In 2009, 2.12 million tons of plastics (of all kinds) were recycled in the United States. However, that was only 7.1% of all plastics generated in 2009."
+	},
+	"factSixtyeight": {
+		"value": 67,
+		"fact": "In 2009, the plastic bottle recycling rate reached a record high of 2.5 billion pounds, or 28% of all plastic bottles consumed in the United States."
+	},
+	"factSixtynine": {
+		"value": 68,
+		"fact": "94% of Americans have access to plastic bottle recycling and 40% of the population can also recycle other types of plastic containers, like dairy tubs and lids."
+	},
+	"factSeventy": {
+		"value": 69,
+		"fact": "Within the 100 largest cities via a 2,500-community person survey, the percentage of the population with access to recycle plastic containers in addition to bottles has nearly doubled since 2008."
+	},
+	"factSeventyone": {
+		"value": 70,
+		"fact": "If all 8 billion pounds of plastic bottles produced in the U.S. in 2009 had been recycled, the material could have produced 22 million extra large t-shirts."
+	},
+	"factSeventytwo": {
+		"value": 71,
+		"fact": "The amount of plastic bottles recycled in 2009, provided enough raw material for about 7 million shirts to be made. "
+	},
+	"factSeventythree": {
+		"value": 72,
+		"fact": "44 percent increase in 2009 of RPET (Recycled PET) used in food and beverage bottles."
+	},
+	"factSeventyfour": {
+		"value": 73,
+		"fact": "With a 66.2% recycling rate, steel containers are one of the most recycled materials in the United States. Every minute, approximately 20,000 steel cans are recycled in the United States."
+	},
+	"factSeventyfive": {
+		"value": 74,
+		"fact": "Each year, more steel is recycled than aluminum, paper, glass and plastic combined."
+	},
+	"factSeventysix": {
+		"value": 75,
+		"fact": "In the past 50 years, more than 50 percent of the steel produced in this country has been recycled through the steelmaking process."
+	},
+	"factSeventyseven": {
+		"value": 76,
+		"fact": "In 2009, we filled United States landfills with trash equivalent to the weight of 88 million cars."
+	},
+	"factSeventyeight": {
+		"value": 77,
+		"fact": "In 2009, Americans produced enough trash to circle the earth 24 times."
+	},
+	"factSeventynine": {
+		"value": 78,
+		"fact": "Recycling one ton of steel conserves 2500 pounds of iron ore, 1400 pounds of coal and 120 pounds of limestone."
+	},
+	"factEighty": {
+		"value": 79,
+		"fact": "Recycling steel and tin cans saves between 60 and 74 percent of the energy used to produce them from raw materials."
+	},
+	"factEightyone": {
+		"value": 80,
+		"fact": "In 2009, Americans threw away 10.39 million tons of steel. That amounts to more than $3 billion in wasted material, or enough to buy lunch for everyone in the United States!"
+	}
+
+
+}
+}
