@@ -1,5 +1,10 @@
 var current = "main";
 
+function getRandom() {
+    var rand = Math.random();
+    return rand;
+}
+
 function pageChange(currentPage, toPage) {
     var $main = $('.page.main');
     var $recycle = $('.page.recycle');

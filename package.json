@@ -24,6 +24,7 @@
     "ferb": "0.0.2",
     "parse": "^1.2.19",
     "passport": "^0.2.0",
-    "passport-facebook": "^1.0.3"
+    "passport-facebook": "^1.0.3",
+    "request": "^2.37.0"
   }
 }

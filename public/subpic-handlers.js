@@ -15,6 +15,8 @@ function newOther(text, cats, dataReuseOther) {
             // Execute any logic that should take place after the object is saved.
             currentScore++;
             $(".navBarItem.score").text(currentScore);
+            $(".bigScore").text(currentScore);
+
             Parse.Cloud.run("updateScore", {
                 userId: persID,
                 score: currentScore
@@ -27,6 +29,11 @@ function newOther(text, cats, dataReuseOther) {
                 }
             });
             console.log('New object created with objectId: ' + newItemObject.id);
+            var rand = Math.random();
+            rand = rand * 81;
+            rand = Math.round(rand)
+            $('.factoid').text(factsy[rand].thing)
+            $('#myThanks').modal('show');
         },
         error: function(newItemObject, error) {
             // Execute any logic that should take place if the save fails.
@@ -76,6 +83,8 @@ $(function() {
                             // Execute any logic that should take place after the object is saved.
                             currentScore++;
                             $(".navBarItem.score").text(currentScore);
+                            $(".bigScore").text(currentScore);
+
                             Parse.Cloud.run("updateScore", {
                                 userId: persID,
                                 score: currentScore
@@ -88,6 +97,11 @@ $(function() {
                                 }
                             });
                             console.log('New object created with objectId: ' + newItem.id);
+                            var rand = Math.random();
+                            rand = rand * 81;
+                            rand = Math.round(rand)
+                            $('.factoid').text(factsy[rand].thing)
+                            $('#myThanks').modal('show');
                         },
                         error: function(newItem, error) {
                             // Execute any logic that should take place if the save fails.
@@ -115,6 +129,8 @@ $(function() {
                                 // Execute any logic that should take place after the object is saved.
                                 currentScore++;
                                 $(".navBarItem.score").text(currentScore);
+                                $(".bigScore").text(currentScore);
+
                                 Parse.Cloud.run("updateScore", {
                                     userId: persID,
                                     score: currentScore
@@ -127,6 +143,11 @@ $(function() {
                                     }
                                 });
                                 console.log('New object created with objectId: ' + newItem.id);
+                                var rand = Math.random();
+                                rand = rand * 81;
+                                rand = Math.round(rand)
+                                $('.factoid').text(factsy[rand].thing)
+                                $('#myThanks').modal('show');
                             },
                             error: function(newItem, error) {
                                 // Execute any logic that should take place if the save fails.
@@ -153,6 +174,8 @@ $(function() {
                     // Execute any logic that should take place after the object is saved.
                     currentScore++;
                     $(".navBarItem.score").text(currentScore);
+                    $(".bigScore").text(currentScore);
+
                     Parse.Cloud.run("updateScore", {
                         userId: persID,
                         score: currentScore
@@ -165,6 +188,11 @@ $(function() {
                         }
                     });
                     console.log('New object created with objectId: ' + newItem.id);
+                    var rand = Math.random();
+                    rand = rand * 81;
+                    rand = Math.round(rand)
+                    $('.factoid').text(factsy[rand].thing)
+                    $('#myThanks').modal('show');
                 },
                 error: function(newItem, error) {
                     // Execute any logic that should take place if the save fails.
