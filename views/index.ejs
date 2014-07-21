@@ -1,5 +1,12 @@
-<!-- I Blame Uday -->
 <!DOCTYPE html>
+<!-- Welcome to Re-App -->
+<!-- This was my first attempt at making a web app, so the code may be a little ugly. This page is basically our Everything.
+ We decided to layer our web app so that everything is on the same html page but we hid what we did not want to be seen. 
+ Most class names with weird names, EX: Ralph, were supposed to just be a temporary quick fix, but stuck due to time constraints.
+ Also, be careful. Comments can break this ejs page for some reason if placed at the end of a line.
+ We only had nine days to work no this, but I still think it turned out fairly well. 
+ This project still needs: a way to fix the myThanks modal which does not always show up when an item is submitted, an improved svg on the navBar, and it needs to be made more mobile friendly.
+ I can be reched at lamarche@iastate.edu for questions-->
 <html>
 	<head>
 		<title>Re-App</title>
@@ -9,19 +16,20 @@
 			var persID = <%= persID %>;
 			var currentScore = <%= currentScore %>;
 		</script>
+		<!-- Links we used-->
 		<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<!-- Local links-->
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type = "text/css" href = "style.css">
 		<link rel="stylesheet" href="fonts.css" />
 		<script src="main.js" type="text/javascript"></script>
 		<script src="subpic-handlers.js" type="text/javascript"></script>
-
 	</head>
 	<body>
 		<div class="Ralph">
@@ -33,7 +41,6 @@
 						</button>
 						<button class="navbar-brand navBarItem home"><div aria-hidden="true" class="grayscale-logo">&nbsp;</div></button>
 					</div>
-
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav tttttop">
 							<li><button type="button" class="navBarItem score"> <%= currentScore%></button></li>
@@ -61,14 +68,14 @@
 						<div class="page main" >
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
-								<p class="Banner ban">Welcome to Re-App!</p>
+									<p class="Banner ban">Welcome to Re-App!</p>
 									<p class = "ban">So far, <%= currentUsers%> users have recycled <%= currentItems%> Items!!!</p>
 									<div class="ban" id="chart"></div>
 									<div class ="welcome"></div>
 								</div>
 							</div>
 						</div>
-
+						<!-- The Recycle Page-->
 						<div class="page recycle" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
@@ -77,152 +84,152 @@
 									<% var subPicArray = [];
 									var subNameArray = [];%>
 									<% for (var rowIndex in allCatData) { %>
-										<div class="row picSpace">
-										<% for (var colIndex in allCatData[rowIndex]) { 
-											var colInfo = allCatData[rowIndex][colIndex]; %>
-											<div class="col-sm-4 <%= colInfo.categoryClass %>">
+									<div class="row picSpace">
+										<% for (var colIndex in allCatData[rowIndex]) {
+										var colInfo = allCatData[rowIndex][colIndex]; %>
+										<div class="col-sm-4 <%= colInfo.categoryClass %>">
 											<div class="ih-item square effect3 bottom_to_top">
 												<button >
-													<div class="img">
-														<img data-cat = "<%= colInfo.index%>" data-reuse="false" src="<%= colInfo.image %>" width="100%" height="100%" />
-														<% picArray.push(colInfo.image)%>
-													</div>
-													<div class="info">
-														<h3><%= colInfo.name %></h3>
-													</div>
-												</button>
+												<div class="img">
+													<img data-cat = "<%= colInfo.index%>" data-reuse="false" src="<%= colInfo.image %>" width="100%" height="100%" />
+													<% picArray.push(colInfo.image)%>
 												</div>
+												<div class="info">
+													<h3><%= colInfo.name %></h3>
+												</div>
+												</button>
 											</div>
+										</div>
 										<%	} %>
 									</div>
 									
-										<% for (var colIndex in allCatData[rowIndex]) { 
-											if(colIndex === "Other"){continue}
-											var colInfo = allCatData[rowIndex][colIndex]; %>
-										<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
+									<% for (var colIndex in allCatData[rowIndex]) {
+									if(colIndex === "Other"){continue}
+									var colInfo = allCatData[rowIndex][colIndex]; %>
+									<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
 										<div class = "row sub">
-										<% var i = 0;%>
-										<% for( var subCat in colInfo.subcategories){ %>
+											<% var i = 0;%>
+											<% for( var subCat in colInfo.subcategories){ %>
 											<div class="col-sm-3">
 												<div class="ih-item square effect3 bottom_to_top">
 													<button >
-														<div class="img">
-															<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="false" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
-															<% subPicArray.push(colInfo["subcategories"][subCat]["image"]);
-															subNameArray.push(subCat);%>
-														</div>
-														<div class="info">
-															<h3><%= subCat%></h3>
-														</div>
+													<div class="img">
+														<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="false" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
+														<% subPicArray.push(colInfo["subcategories"][subCat]["image"]);
+														subNameArray.push(subCat);%>
+													</div>
+													<div class="info">
+														<h3><%= subCat%></h3>
+													</div>
 													</button>
 												</div>
 											</div>
-										<%if((i+1) % 3 === 0){%>
-											</div>
-											<div class="row sub">
-										<% }%>
-
-										<%i++%>
-										<% }%>
+											<%if((i+1) % 3 === 0){%>
 										</div>
+										<div class="row sub">
+											<% }%>
+											<%i++%>
+											<% }%>
 										</div>
-										<%	} %>
+									</div>
+									<%	} %>
 									<% } %>
 								</div>
 							</div>
 						</div>
-
+						<!-- The Reuse Page-->
 						<div class="page reuse" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
 									<h1>What item are you reusing?</h1>
 									<% for (var rowIndex in allCatData) { %>
-										<div class="row picSpace">
-										<% for (var colIndex in allCatData[rowIndex]) { 
-											var colInfo = allCatData[rowIndex][colIndex]; %>
-											<div data-cat="<%= colInfo.index %>" class="col-sm-4 <%= colInfo.categoryClass %>">
+									<div class="row picSpace">
+										<% for (var colIndex in allCatData[rowIndex]) {
+										var colInfo = allCatData[rowIndex][colIndex]; %>
+										<div data-cat="<%= colInfo.index %>" class="col-sm-4 <%= colInfo.categoryClass %>">
 											<div data-cat="<%= colInfo.index %>" class="ih-item square effect3 bottom_to_top">
 												<button >
-													<div data-cat="<%= colInfo.index %>" class="img">
-														<img data-cat="<%= colInfo.index %>" data-reuse="true" src="<%= colInfo.image %>" width="100%" height="100%" />
-													</div>
-													<div class="info">
-														<h3><%= colInfo.name %></h3>
-													</div>
-												</button>
+												<div data-cat="<%= colInfo.index %>" class="img">
+													<img data-cat="<%= colInfo.index %>" data-reuse="true" src="<%= colInfo.image %>" width="100%" height="100%" />
 												</div>
+												<div class="info">
+													<h3><%= colInfo.name %></h3>
+												</div>
+												</button>
 											</div>
+										</div>
 										<%	} %>
 									</div>
-										<% for (var colIndex in allCatData[rowIndex]) { 
-											var colInfo = allCatData[rowIndex][colIndex]; %>
-										<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
+									<% for (var colIndex in allCatData[rowIndex]) {
+									var colInfo = allCatData[rowIndex][colIndex]; %>
+									<div class="row subPicSpace sub<%= colInfo.categoryClass%>" data-cat-index="<%= colInfo.index %>">
 										<div class = "row sub">
-										<% var i = 0;%>
-										<% for( var subCat in colInfo.subcategories){ %>
+											<% var i = 0;%>
+											<% for( var subCat in colInfo.subcategories){ %>
 											<div class="col-sm-3">
 												<div class="ih-item square effect3 bottom_to_top">
 													<button >
-														<div class="img">
-															<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="true" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
-														</div>
-														<div class="info">
-															<h3><%= subCat%></h3>
-														</div>
+													<div class="img">
+														<img data-value="<%= colInfo["subcategories"][subCat]["value"]%>" data-name="<%= subCat%>" data-reuse="true" data-id="<%= persID%>"src="<%= colInfo["subcategories"][subCat]["image"]%>" width="100%" height="100%" />
+													</div>
+													<div class="info">
+														<h3><%= subCat%></h3>
+													</div>
 													</button>
 												</div>
 											</div>
-										<%if((i+1) % 3 === 0){%>
-											</div>
-											<div class="row sub">
-										<% }%>
-
-										<%i++%>
-										<% }%>
+											<%if((i+1) % 3 === 0){%>
 										</div>
+										<div class="row sub">
+											<% }%>
+											<%i++%>
+											<% }%>
 										</div>
-										<%	} %>
+									</div>
+									<%	} %>
 									<% } %>
 								</div>
 							</div>
 						</div>
+						<!-- The Friends Page-->
 						<div class="page friends" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
 									<h2> Friends on Re-App</h2>
 									<%console.log(faceMatch)%>
 									<% for( var i = 0; i < faceMatch.length; i++){
-										var name = faceMatch[i].name
-										var id = faceMatch[i].id%>
-										<div class = "row">
-											<div class="col-sm-1 friendImage">
-    											<img id = "coolPicPro" class="img-circle"src="http://graph.facebook.com/<%=id%>/picture?type=square"/>
-    										</div>
-    										<div class = "col-sm-11 friendName">
-												<p><%=name%> </p>
-											</div>
+									var name = faceMatch[i].name
+									var id = faceMatch[i].id%>
+									<div class = "row">
+										<div class="col-sm-1 friendImage">
+											<img id = "coolPicPro" class="img-circle"src="http://graph.facebook.com/<%=id%>/picture?type=square"/>
 										</div>
-										<%}%>
+										<div class = "col-sm-11 friendName">
+											<p><%=name%> </p>
+										</div>
+									</div>
+									<%}%>
 								</div>
 							</div>
 						</div>
+						<!-- The Profile Page-->
 						<div class="page profile" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
 									<div class="row proThing">
- 									   <div class="col-sm-4 ih-item circle effect13 bottom_to_top">
- 									   	<div class="prof">
- 									       <div class="picHere">
- 									       </div>
- 									       	<div class="info whyMe">
- 									       	
- 									         	<div class="info-back">
- 									           		<h3 id="bigScore"><%=currentScore%></h3>
- 									        	</div>
- 									        </div>
- 									        </div>
- 									    </div>
- 									    <div class="col-sm-8 bigName">
+										<div class="col-sm-4 ih-item circle effect13 bottom_to_top">
+											<div class="prof">
+												<div class="picHere">
+												</div>
+												<div class="info whyMe">
+													
+													<div class="info-back">
+														<h3 id="bigScore"><%=currentScore%></h3>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-8 bigName">
 											<h6 id="bigBoy"><%=displayName%></h6>
 										</div>
 									</div>
@@ -232,48 +239,46 @@
 									var tempCat = [];
 									var bigCatNames = ["Glass Products", "Plastics", "Paper Products","Batteries/Bulbs", "Metal Products", "Cloth Products", "Electronics", "Garage Products", "Other Items"]%>
 									<%
-									for(var i = 0 ; i < bigCatNames.length ; i ++) { 
-										var ndx = i + 1;
-										%>
-										<div class="row profile-item-list">
-											<div class="col-sm-1">
-												<img class="img-circle img-responsive profileCategoryPic"
-													src="<%= picArray[i]%>">
-											</div>
-											<div class="col-sm-11">
-												<div class="cat-title"> <%=bigCatNames[i]%></div>
-												<%
-												var pi = personalItems[ndx.toString()] || [];
-												var rc = pi.length > 0 ? pi.length.toString() : "No";
-												%>
-												<div class="cat-count"><%= rc %> items recycled</div>
-
-												<% 
-												var subcats = {};
-												pi.forEach(function(item) {
-													subcats[item.subcategory] = subcats[item.subcategory] || 0;
-													subcats[item.subcategory]++;
-												});
-												for (var k in subcats) {
-													var imgIndex = k.toString();
-													var count = subcats[k];
-
-													for (var j = 0 ; j < count ; j ++) {
-														var imgSrc = i === 8 ? picMap[i].image :
-															picMap[i].subcategories[imgIndex];
-
-												%>
-														<img class="img-circle subProfileCategoryPic"
-															src="<%= imgSrc %>">
-												<%
-													}
-												} %>
-											</div>
-										</div>	
+									for(var i = 0 ; i < bigCatNames.length ; i ++) {
+									var ndx = i + 1;
+									%>
+									<div class="row profile-item-list">
+										<div class="col-sm-1">
+											<img class="img-circle img-responsive profileCategoryPic"
+											src="<%= picArray[i]%>">
+										</div>
+										<div class="col-sm-11">
+											<div class="cat-title"> <%=bigCatNames[i]%></div>
+											<%
+											var pi = personalItems[ndx.toString()] || [];
+											var rc = pi.length > 0 ? pi.length.toString() : "No";
+											%>
+											<div class="cat-count"><%= rc %> items recycled</div>
+											<%
+											var subcats = {};
+											pi.forEach(function(item) {
+											subcats[item.subcategory] = subcats[item.subcategory] || 0;
+											subcats[item.subcategory]++;
+											});
+											for (var k in subcats) {
+											var imgIndex = k.toString();
+											var count = subcats[k];
+											for (var j = 0 ; j < count ; j ++) {
+											var imgSrc = i === 8 ? picMap[i].image :
+											picMap[i].subcategories[imgIndex];
+											%>
+											<img class="img-circle subProfileCategoryPic"
+											src="<%= imgSrc %>">
+											<%
+											}
+											} %>
+										</div>
+									</div>
 									<%}%>
 								</div>
 							</div>
 						</div>
+						<!-- The Leaderboard Page-->
 						<div class="page leaderboard" id="full">
 							<div class="container-fluid">
 								<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 center">
@@ -296,6 +301,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- The modal that shows up when "other" is clicked-->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -314,6 +320,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- The modal that shows up to say "Thanks"-->
 					<div class="modal fade" id="myThanks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -333,8 +340,8 @@
 					</div>
 				</div>
 			</div>
-			</div>
-			<script src = "subJ.js" type = "text/javascript"></script>
-			<script src="bubblechart.js" type="text/javascript"></script>
-		</body>
-	</html>
+		</div>
+		<script src = "subJ.js" type = "text/javascript"></script>
+		<script src="bubblechart.js" type="text/javascript"></script>
+	</body>
+</html>

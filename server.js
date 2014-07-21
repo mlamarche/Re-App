@@ -1,9 +1,4 @@
-// server.js
-// do server stuff
-//
-
-
-
+/*This page is all of our server side stuff. Here we interact with facebook and parse before sending that information down to index.ejs*/
 var categories = require("./cats.json");
 var catData = require("./cat-data");
 
@@ -48,7 +43,6 @@ var app = require("ferb")(),
     async = require("async"),
     request = require("request")
 
-
     var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -81,7 +75,6 @@ passport.use(new FacebookStrategy({
     },
     function(accessToken, refreshToken, profile, done) {
         request("https://graph.facebook.com/me/friends?access_token=" + accessToken, function(err, r, body) {
-            //console.log(body);
             var bod = JSON.parse(body);
             var count = 0;
             for (var k in bod.data) {
@@ -100,10 +93,10 @@ passport.use(new FacebookStrategy({
 
 
 Parse.initialize("naN50758keB99xyf9lrf1r5LjyuIGiPVwDfu3Y6w", "E4OZ0O3gioOueyIlyjD1MMFVq189RZD29AQazYc8");
-//Parse.initialize("KOxUo1qxlR9WAXDKG1NteEMdftJT4esM0LWScX1x", "TmTCBsWIsOUuNeML4NSLEJdcZ7sIqzd8VuNeeSkm");
+//Parse.initialize("KOxUo1qxlR9WAXDKG1NteEMdftJT4esM0LWScX1x", "TmTCBsWIsOUuNeML4NSLEJdcZ7sIqzd8VuNeeSkm"); -- used for test app
 
 var Item = Parse.Object.extend("Item");
-//var Item = Parse.Object.extend("item");
+//var Item = Parse.Object.extend("item"); -- used for test app
 var User = Parse.Object.extend("user");
 
 var groupUserItemsByCategory = function(userid, cb) {
@@ -126,7 +119,7 @@ var groupUserItemsByCategory = function(userid, cb) {
         }
     });
 }
-
+//compares facebook friends to the Parse server
     function compareGroups(facebookFriends, callbacker) {
         if (facebookFriends.length === 0)
             return callbacker(null, [])
@@ -135,36 +128,28 @@ var groupUserItemsByCategory = function(userid, cb) {
         for (x = 0; x < facebookFriends.length; x++) {
             facebookIDs.push(facebookFriends[x].id);
         }
-        //console.log(facebookIDs)
         var User = Parse.Object.extend("user");
 
         var userTotal = new Parse.Query(User);
         var doneCount = facebookIDs.length;
         for (s = 0; s < facebookIDs.length; s++) {
-            //console.log(s, "  ", facebookIDs[s])
             userTotal.equalTo("userID", parseInt(facebookIDs[s])).find({
                 success: function(results) {
                     if (results.length > 0) {
-                        // console.log(results);
-                        //console.log(results[0].attributes["userID"])
                         var friend = {
                             name: results[0].attributes["firstName"] + " " + results[0].attributes["lastName"],
                             id: results[0].attributes["userID"]
                         }
-                        console.log(friend) //2
                         if (facebookMatches.length === 0) {
                             facebookMatches.push(friend)
 
                         } else {
                             for (t = 0; t < facebookMatches.length; t++) {
-                                if (facebookMatches[t].id === friend.id) {
-                                    console.log("no");
-                                } else {
+                                if (facebookMatches[t].id === friend.id) {} else {
                                     facebookMatches.push(friend)
                                 }
                             }
                         }
-                        console.log(facebookMatches + "fbm") //1
 
                     }
                     doneCount--;
@@ -177,7 +162,7 @@ var groupUserItemsByCategory = function(userid, cb) {
         }
 
     }
-
+    //Maps out all the pictures for display
 var buildPicturesMap = function() {
     var r = [];
     for (var k in categories) {
@@ -206,7 +191,7 @@ app.get("/authed", function(req, res) {
         return res.redirect("/");
 
     var userQuery = new Parse.Query(User);
-
+    //Kind of like the main function here.
     var doStuffWithUser = function(users) {
         var userQuery = new Parse.Query(User);
         var userCount = new Parse.Query(User);
@@ -214,7 +199,7 @@ app.get("/authed", function(req, res) {
         var itemCount = new Parse.Query(Item);
         var personalID = req.user.id;
 
-
+        //returns counts of each item. i dont even remember if this is still necessary
         function countItem(item, callbacker) {
             var q = new Parse.Query(Item);
             q.equalTo("category", item).count({
@@ -224,6 +209,7 @@ app.get("/authed", function(req, res) {
             })
         }
 
+        //counts categories
         function countCat(callbacker) {
             var all = new Parse.Query(Item);
             var catArray = [];
@@ -237,69 +223,65 @@ app.get("/authed", function(req, res) {
             }
         }
 
+        //sorts the top 20 scores for the leaderboard
         function sortScore(callbacker) {
             var useScore = new Parse.Query(User);
             var thing = useScore;
             callbacker(null, thing);
         }
 
-
-        console.log("Running async parallel")
+        //runs these in parallel to ensure they end up in the right spot in the return array
         async.parallel([
-
+                //arr[0]
                 function(callbacker) {
                     userCount.count({
                         success: function(count) {
-                            console.log("c1");
                             callbacker(null, count);
                         }
                     })
 
                 },
+                //arr[1]
                 function(callbacker) {
                     itemCount.count({
                         success: function(count) {
-                            console.log("c2");
                             callbacker(null, count);
                         }
                     })
                 },
+                //arr[2]
                 function(callbacker) {
                     async.map([1, 2, 3, 4, 5, 6, 7, 8, 9], countItem, function(err, r) {
-                        console.log("c6");
                         callbacker(err, r)
                     });
                 },
+                //arr[3]
                 function(callbacker) {
                     var userScoreQuery = new Parse.Query(User);
                     userScoreQuery.descending("score");
                     userScoreQuery.limit(20);
                     userScoreQuery.find({
                         success: function(results) {
-                            console.log("c3");
                             callbacker(null, results);
                         }
 
                     })
                 },
+                //arr[4]
                 function(callbacker) {
-                    //console.log(personalID + " Hello World");
                     groupUserItemsByCategory(personalID, function(err, r) {
-                        console.log("c4");
                         callbacker(err, r);
                     });
                 },
+                //arr[5]
                 function(callbacker) {
                     compareGroups(allFacebookFriends, function(err, r) {
-                        console.log("c5");
                         callbacker(err, r);
                     });
                 }
             ],
             function(err, arr) {
-                console.log("Have all results")
                 var count = 0;
-                console.log(arr[5])
                 var leaderBoard = arr[3].map(function(r) {
                     count++;
                     return {
@@ -308,6 +290,7 @@ app.get("/authed", function(req, res) {
                         index: count
                     }
                 });
+                // sends these to index.ejs and can be called from there
                 res.render("index", {
                     displayName: req.user.displayName,
                     givenName: req.user.name.givenName,
@@ -327,11 +310,9 @@ app.get("/authed", function(req, res) {
             });
     };
 
-    console.log("Looking for user");
 
     userQuery.equalTo("userID", parseInt(req.user.id)).find({
         success: function(users) {
-            console.log("Return for user with id:", req.user.id, users.length)
             if (users.length === 0) {
                 var NewUser = Parse.Object.extend("user");
                 var newUser = new NewUser();
@@ -341,16 +322,11 @@ app.get("/authed", function(req, res) {
                 newUser.set("userID", parseInt(req.user.id));
                 newUser.save(null, {
                     success: function(newItemObject) {
-                        // Execute any logic that should take place after the object is saved.
-                        console.log('New user created with objectId: ' + newItemObject.id);
                         doStuffWithUser([newUser]);
 
                     },
-                    error: function(newItemObject, error) {
-                        console.log('Failed to create new user, with error code: ' + error.message);
-                    }
+                    error: function(newItemObject, error) {}
                 });
-                //return res.send("You are not registered with Re-App");
             } else
                 doStuffWithUser(users);
         }

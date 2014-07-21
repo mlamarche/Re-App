@@ -1,3 +1,4 @@
+/*This page writes to the parse server. This page needs to be condensed still due to a lot of repeating code. It also then shows the myThanks modal*/
 function newOther(text, cats, dataReuseOther) {
     var NewItemOther = Parse.Object.extend("Item");
     var newItemOther = new NewItemOther();
@@ -15,7 +16,7 @@ function newOther(text, cats, dataReuseOther) {
             // Execute any logic that should take place after the object is saved.
             currentScore++;
             $(".navBarItem.score").text(currentScore);
-            $(".bigScore").text(currentScore);
+            $("#bigScore").text(currentScore);
 
             Parse.Cloud.run("updateScore", {
                 userId: persID,
@@ -45,7 +46,7 @@ function newOther(text, cats, dataReuseOther) {
 }
 
 $(function() {
-    //Parse.initialize("KOxUo1qxlR9WAXDKG1NteEMdftJT4esM0LWScX1x", "TmTCBsWIsOUuNeML4NSLEJdcZ7sIqzd8VuNeeSkm");
+    //Parse.initialize("KOxUo1qxlR9WAXDKG1NteEMdftJT4esM0LWScX1x", "TmTCBsWIsOUuNeML4NSLEJdcZ7sIqzd8VuNeeSkm"); -- This is the second app we used for testing
     Parse.initialize("naN50758keB99xyf9lrf1r5LjyuIGiPVwDfu3Y6w", "E4OZ0O3gioOueyIlyjD1MMFVq189RZD29AQazYc8");
 
 
@@ -83,7 +84,7 @@ $(function() {
                             // Execute any logic that should take place after the object is saved.
                             currentScore++;
                             $(".navBarItem.score").text(currentScore);
-                            $(".bigScore").text(currentScore);
+                            $("#bigScore").text(currentScore);
 
                             Parse.Cloud.run("updateScore", {
                                 userId: persID,
@@ -129,7 +130,7 @@ $(function() {
                                 // Execute any logic that should take place after the object is saved.
                                 currentScore++;
                                 $(".navBarItem.score").text(currentScore);
-                                $(".bigScore").text(currentScore);
+                                $("#bigScore").text(currentScore);
 
                                 Parse.Cloud.run("updateScore", {
                                     userId: persID,
@@ -174,7 +175,7 @@ $(function() {
                     // Execute any logic that should take place after the object is saved.
                     currentScore++;
                     $(".navBarItem.score").text(currentScore);
-                    $(".bigScore").text(currentScore);
+                    $("#bigScore").text(currentScore);
 
                     Parse.Cloud.run("updateScore", {
                         userId: persID,

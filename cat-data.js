@@ -1,3 +1,4 @@
+/* This code is a different way of breaking down the information recieved than my attempts on the server side.*/
 var categories = require("./cats.json");
 
 var santizeObject = function(items) {

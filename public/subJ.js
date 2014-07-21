@@ -1,3 +1,4 @@
+/*This page toggles between sub menus*/
 $(function() {
     var currentSub = "";
     $('.glassP').click(function() {

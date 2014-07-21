@@ -1,3 +1,4 @@
+/* This page switches between the main pages on index.ejs. There are also a few random function on here that were initially temporary. They can be moved*/
 var current = "main";
 
 function getRandom() {
@@ -46,16 +47,8 @@ function pageChange(currentPage, toPage) {
     $(".subPicSpace").fadeOut();
     $("." + currentPage + "z").css('background-color', "white");
     $("." + toPage + "z").css('background-color', "#666666");
-    //$from.off('click');
 }
 $(function() {
-
-    //$('.page').width = window.innerWidth - 300;
-    //console.log($('.pages').width);
-
-
-
-
     $('button.toMain').click(function() {
         console.log("been clicked", current);
         if (current != "main") {

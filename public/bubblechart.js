@@ -1,3 +1,4 @@
+/*This page is the bubble chart. It still needs some work to adjust to screen size and maybe make it more interactive*/
 var diameter = 900,
     format = d3.format(",d"),
     color = d3.scale.category20c();
